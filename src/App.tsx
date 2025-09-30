@@ -28,6 +28,7 @@ import imeg2 from "./assets/gambar prh 2.0.png";
 import imeg3 from "./assets/gambar prh 3.0.png";
 import imeg4 from "./assets/gambar prh 4.0.png";
 import imeg5 from "./assets/gambar prh 5.0.png";
+import logo from "./assets/logo.png";
 import { Image } from "lucide-react";
 
 function App() {
@@ -118,7 +119,7 @@ function App() {
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 bg-gradient-to-br from-white-600 to-white-800 rounded-lg flex items-center justify-center">
-                <img src="dist/logo.png" className="h-15 w-15 text-white" />
+                <img src={logo} className="h-15 w-15 text-white" />
               </div>
               <div>
                 <h1 className="text-xl font-bold text-gray-800">
