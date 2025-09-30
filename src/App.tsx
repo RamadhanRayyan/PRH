@@ -571,26 +571,6 @@ function App() {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Solusi PRH yang Diterapkan
               </h3>
-              <div className="space-y-6">
-                <div className="bg-white rounded-lg p-6 shadow-sm">
-                  <div className="flex items-center mb-3">
-                    <div className="w-4 h-4 bg-blue-600 rounded-full mr-3"></div>
-                    <h4 className="font-semibold text-gray-900">PRH Tipe T</h4>
-                  </div>
-                  <p className="text-gray-600">
-                    Untuk area dengan multiple input saluran air
-                  </p>
-                </div>
-                <div className="bg-white rounded-lg p-6 shadow-sm">
-                  <div className="flex items-center mb-3">
-                    <div className="w-4 h-4 bg-teal-600 rounded-full mr-3"></div>
-                    <h4 className="font-semibold text-gray-900">PRH Tipe L</h4>
-                  </div>
-                  <p className="text-gray-600">
-                    Untuk sudut area dan optimalisasi space
-                  </p>
-                </div>
-              </div>
               <div className="mt-6 p-4 bg-white rounded-lg">
                 <p className="text-sm text-gray-600 italic">
                   "Dengan kondisi curah hujan tinggi dan dominasi lahan sawah,
