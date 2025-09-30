@@ -58,8 +58,7 @@ function App() {
     },
     {
       title: "Skema Pipa Resapan Horizontal",
-      description:
-        "Rangkaian berskala untuk menjaga kinerja optimal PRH",
+      description: "Rangkaian berskala untuk menjaga kinerja optimal PRH",
       gambar: imeg5,
     },
   ];
@@ -167,7 +166,6 @@ function App() {
                   "Beranda",
                   "Tentang Kami",
                   "Produk",
-                  "Implementasi",
                   "Galeri",
                   "Kontak",
                 ].map((item) => (
@@ -188,49 +186,62 @@ function App() {
 
       {/* Hero Section */}
       <section
-        id="beranda"
-        className="pt-20 bg-gradient-to-br from-blue-50 via-white to-teal-50"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Solusi Inovatif untuk
-                <span className="text-blue-600"> Konservasi Air Tanah</span> dan
-                <span className="text-teal-600"> Penanggulangan Banjir</span>
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                CV. Rekayasa Nusa Mandiri mempersembahkan Pipa Resapan
-                Horizontal (PRH) sebagai teknologi tepat guna untuk masa depan
-                lingkungan berkelanjutan.
-              </p>
-              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"></div>
-            </div>
-            <div className="relative">
-              <div className="bg-gradient-to-r from-blue-500 to-teal-500 rounded-2xl p-8 text-white transform rotate-1 hover:rotate-0 transition-transform duration-300">
-                <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
-                  <Droplets className="h-16 w-16 mb-4" />
-                  <h3 className="text-2xl font-bold mb-2">Teknologi PRH</h3>
-                  <p className="mb-4">
-                    Pipa Resapan Horizontal untuk solusi banjir dan konservasi
-                    air tanah
-                  </p>
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div className="flex items-center">
-                      <Shield className="h-4 w-4 mr-2" />
-                      <span>Ramah Lingkungan</span>
-                    </div>
-                    <div className="flex items-center">
-                      <TrendingUp className="h-4 w-4 mr-2" />
-                      <span>Efektif & Efisien</span>
-                    </div>
-                  </div>
-                </div>
+  id="beranda"
+  className="relative pt-20 bg-cover bg-center"
+  style={{ backgroundImage: `url(${imeg1})` }}
+>
+  {/* overlay */}
+  <div className="absolute inset-0 bg-black/35"></div>
+
+  {/* content */}
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      
+      {/* Left text */}
+      <div>
+        <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+          Solusi Inovatif untuk
+          <span className="text-blue-300"> Konservasi Air Tanah</span> dan
+          <span className="text-teal-300"> Penanggulangan Banjir</span>
+        </h1>
+        <p className="text-lg lg:text-xl text-gray-100 mb-8 leading-relaxed">
+          CV. Rekayasa Nusa Mandiri mempersembahkan Pipa Resapan Horizontal
+          (PRH) sebagai teknologi tepat guna untuk masa depan lingkungan
+          berkelanjutan.
+        </p>
+        <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+          {/* tombol / CTA nanti bisa ditaruh di sini */}
+        </div>
+      </div>
+
+      {/* Right card */}
+      <div className="relative">
+        <div className="bg-gradient-to-r from-blue-500 to-teal-500 rounded-2xl p-8 text-white transform rotate-2 hover:rotate-0 transition-transform duration-300 shadow-lg">
+          <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
+            <Droplets className="h-16 w-16 mb-4" />
+            <h3 className="text-2xl font-bold mb-2">Teknologi PRH</h3>
+            <p className="mb-4">
+              Pipa Resapan Horizontal untuk solusi banjir dan konservasi air tanah
+            </p>
+            <div className="grid grid-cols-2 gap-4 text-sm">
+              <div className="flex items-center">
+                <Shield className="h-4 w-4 mr-2" />
+                <span>Ramah Lingkungan</span>
+              </div>
+              <div className="flex items-center">
+                <TrendingUp className="h-4 w-4 mr-2" />
+                <span>Efektif & Efisien</span>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
       {/* Tentang Kami */}
       <section id="tentang-kami" className="py-20 bg-white">
@@ -431,10 +442,16 @@ function App() {
               <img
                 src={galleryImages[currentSlide].gambar}
                 alt={galleryImages[currentSlide].title}
-                className={`w-full h-full ${currentSlide === 4 ? 'object-contain' : 'object-cover'}`}
+                className={`w-full h-full ${
+                  currentSlide === 4 ? "object-contain" : "object-cover"
+                }`}
               />
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className={`text-center ${currentSlide === 4 ? 'text-black' : 'text-white'}`}>
+                <div
+                  className={`text-center ${
+                    currentSlide === 4 ? "text-black" : "text-white"
+                  }`}
+                >
                   <h3 className="text-2xl font-bold mb-2">
                     {galleryImages[currentSlide].title}
                   </h3>
@@ -506,21 +523,21 @@ function App() {
                   <span className="font-medium text-gray-700">
                     Curah Hujan Tinggi
                   </span>
-                  <span className="text-2xl font-bold text-orange-600">
-                    85%
+                  <span className="text-2xl font-bold text-green-600">
+                    97%
                   </span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-white rounded-lg">
                   <span className="font-medium text-gray-700">
                     Dominasi Lahan Sawah
                   </span>
-                  <span className="text-2xl font-bold text-green-600">72%</span>
+                  <span className="text-2xl font-bold text-orange-600">25%</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-white rounded-lg">
                   <span className="font-medium text-gray-700">
                     Risiko Banjir
                   </span>
-                  <span className="text-2xl font-bold text-red-600">68%</span>
+                  <span className="text-2xl font-bold text-red-600">20-30%</span>
                 </div>
               </div>
             </div>
@@ -604,13 +621,6 @@ function App() {
                 handle: "Blog Resmi",
                 url: "https://piparesapanhorisontal.blogspot.com/",
               },
-              {
-                name: "E-Catalogue",
-                icon: ExternalLink,
-                color: "from-blue-500 to-teal-600",
-                handle: "Katalog Online",
-                url: "https://katalog.inaproc.id/rekayasa-nusa-mandiri/pipa-resapan-horisontal",
-              },
             ].map((social, index) => (
               <a
                 key={index}
@@ -655,73 +665,72 @@ function App() {
 
       {/* Kontak */}
       <section id="kontak" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Kontak Kami
-            </h2>
-            <p className="text-xl text-gray-600">
-              Hubungi Kami untuk Kerjasama & Pemesanan PRH
-            </p>
-          </div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl font-bold text-gray-900 mb-4">
+        Kontak Kami
+      </h2>
+      <p className="text-xl text-gray-600">
+        Hubungi Kami untuk Kerjasama & Pemesanan PRH
+      </p>
+    </div>
 
-          <div className="gap-12">
-            <div className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center justify-center">
-                Informasi Perusahaan
-              </h3>
+    <div className="gap-12">
+      <div className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl p-8">
+        <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center justify-center">
+          Informasi Perusahaan
+        </h3>
 
-              <div className="  flex items-center justify-center space-x-8">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-blue-600 p-3 rounded-lg">
-                    <MapPin className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">
-                      Alamat Kantor
-                    </h4>
-                    <p className="text-gray-600">
-                      Jl. Teknologi No. 123, Semarang
-                      <br />
-                      Jawa Tengah, Indonesia 50131
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="bg-green-600 p-3 rounded-lg">
-                    <Phone className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">
-                      Telepon / WhatsApp
-                    </h4>
-                    <p className="text-gray-600">
-                      +62 821-3456-7890
-                      <br />
-                      +62 274-123-456
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="bg-purple-600 p-3 rounded-lg">
-                    <Mail className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-                    <p className="text-gray-600">
-                      info@rekayasanusamandiri.com
-                      <br />
-                      marketing@rekayasanusamandiri.com
-                    </p>
-                  </div>
-                </div>
-              </div>
+        {/* diubah jadi responsif */}
+        <div className="flex flex-col md:flex-row items-stretch md:items-start justify-center gap-8">
+          
+          {/* alamat */}
+          <div className="flex items-start space-x-4">
+            <div className="bg-blue-600 p-3 rounded-lg">
+              <MapPin className="h-6 w-6 text-white" />
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-1">
+                Alamat Kantor
+              </h4>
+              <p className="text-gray-600">
+                Jl.Bulusan Utara Raya Kec.Tembalang Kota Semarang
+                <br />
+                Jawa Tengah, Indonesia 50277
+              </p>
             </div>
           </div>
+
+          {/* telepon */}
+          <div className="flex items-start space-x-4">
+            <div className="bg-green-600 p-3 rounded-lg">
+              <Phone className="h-6 w-6 text-white" />
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-1">
+                Telepon / WhatsApp
+              </h4>
+              <p className="text-gray-600">+62 813 9029 4115</p>
+            </div>
+          </div>
+
+          {/* email */}
+          <div className="flex items-start space-x-4">
+            <div className="bg-purple-600 p-3 rounded-lg">
+              <Mail className="h-6 w-6 text-white" />
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
+              <p className="text-gray-600">rekayasanusamandiri@gmail.com</p>
+            </div>
+          </div>
+
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
