@@ -29,6 +29,9 @@ import imeg3 from "./assets/gambar prh 3.0.png";
 import imeg4 from "./assets/gambar prh 4.0.png";
 import imeg5 from "./assets/gambar prh 5.0.png";
 import logo from "./assets/logo.png";
+import patenT from "./assets/paten T.png";
+import patenR from "./assets/paten R.png";
+import patenL from "./assets/paten L.png";
 import { Image } from "lucide-react";
 
 function App() {
@@ -305,92 +308,113 @@ function App() {
 
       {/* Produk Unggulan */}
       <section id="produk" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Produk Unggulan
-            </h2>
-            <p className="text-xl text-gray-600">
-              Pipa Resapan Horizontal (PRH) - Teknologi Inovatif untuk
-              Lingkungan
-            </p>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl font-bold text-gray-900 mb-4">
+        Produk Unggulan
+      </h2>
+      <p className="text-xl text-gray-600">
+        Pipa Resapan Horizontal (PRH) - Teknologi Inovatif untuk Lingkungan
+      </p>
+    </div>
+
+    {/* Produk Cards */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+      {products.map((product, index) => (
+        <div
+          key={index}
+          className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden"
+        >
+          <div className="bg-gradient-to-r from-blue-600 to-teal-600 p-6 text-white">
+            <h3 className="text-2xl font-bold mb-2">{product.type}</h3>
+            <p className="text-blue-100">ID: {product.id}</p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {products.map((product, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden"
-              >
-                <div className="bg-gradient-to-r from-blue-600 to-teal-600 p-6 text-white">
-                  <h3 className="text-2xl font-bold mb-2">{product.type}</h3>
-                  <p className="text-blue-100">ID: {product.id}</p>
-                </div>
-                <div className="p-6">
-                  <p className="text-gray-600 mb-4">{product.description}</p>
-                  <ul className="space-y-2">
-                    {product.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-gray-700">
-                        <ChevronRight className="h-4 w-4 text-green-500 mr-2" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Manfaat & Keunggulan */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <Award className="h-8 w-8 text-green-600 mr-3" />
-                Manfaat PRH
-              </h3>
-              <ul className="space-y-4">
-                {[
-                  "Mengatasi banjir & genangan air",
-                  "Menambah ketersediaan air tanah",
-                  "Mengurangi intrusi air laut",
-                  "Menjaga keseimbangan ekosistem",
-                ].map((benefit, index) => (
-                  <li
-                    key={index}
-                    className="flex items-center text-lg text-gray-700"
-                  >
-                    <div className="w-2 h-2 bg-green-500 rounded-full mr-4"></div>
-                    <span>{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <TrendingUp className="h-8 w-8 text-blue-600 mr-3" />
-                Keunggulan PRH
-              </h3>
-              <ul className="space-y-4">
-                {[
-                  "Harga lebih murah dibanding alternatif lain",
-                  "Pembuatan & perawatan mudah",
-                  "Tidak membutuhkan lahan luas",
-                  "Tetap efektif walau muka air tanah dangkal",
-                ].map((advantage, index) => (
-                  <li
-                    key={index}
-                    className="flex items-center text-lg text-gray-700"
-                  >
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-4"></div>
-                    <span>{advantage}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="p-6">
+            <p className="text-gray-600 mb-4">{product.description}</p>
+            <ul className="space-y-2">
+              {product.features.map((feature, idx) => (
+                <li key={idx} className="flex items-center text-gray-700">
+                  <ChevronRight className="h-4 w-4 text-green-500 mr-2" />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+
+    {/* Tambahan Sertifikat */}
+    <div className="text-center mb-12">
+      <h3 className="text-2xl font-bold text-gray-900 mb-4">Sertifikat Paten</h3>
+      <p className="text-gray-600">
+        Inovasi PRH sudah mendapatkan perlindungan hukum melalui paten sederhana.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <img
+        src={patenT}
+        alt="Sertifikat Paten PRH Tipe T"
+        className="rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+      />
+      <img
+        src={patenR}
+        alt="Sertifikat Paten PRH Radial"
+        className="rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+      />
+      <img
+        src={patenL}
+        alt="Sertifikat Paten PRH Tipe L"
+        className="rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+      />
+    </div>
+
+    {/* Manfaat & Keunggulan */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-16">
+      <div className="bg-white rounded-2xl shadow-lg p-8">
+        <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+          <Award className="h-8 w-8 text-green-600 mr-3" />
+          Manfaat PRH
+        </h3>
+        <ul className="space-y-4">
+          {[
+            "Mengatasi banjir & genangan air",
+            "Menambah ketersediaan air tanah",
+            "Mengurangi intrusi air laut",
+            "Menjaga keseimbangan ekosistem",
+          ].map((benefit, index) => (
+            <li key={index} className="flex items-center text-lg text-gray-700">
+              <div className="w-2 h-2 bg-green-500 rounded-full mr-4"></div>
+              <span>{benefit}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="bg-white rounded-2xl shadow-lg p-8">
+        <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+          <TrendingUp className="h-8 w-8 text-blue-600 mr-3" />
+          Keunggulan PRH
+        </h3>
+        <ul className="space-y-4">
+          {[
+            "Harga lebih murah dibanding alternatif lain",
+            "Pembuatan & perawatan mudah",
+            "Tidak membutuhkan lahan luas",
+            "Tetap efektif walau muka air tanah dangkal",
+          ].map((advantage, index) => (
+            <li key={index} className="flex items-center text-lg text-gray-700">
+              <div className="w-2 h-2 bg-blue-500 rounded-full mr-4"></div>
+              <span>{advantage}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Implementasi & Proyek */}
       <section id="implementasi" className="py-20 bg-white">
