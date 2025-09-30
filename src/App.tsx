@@ -32,6 +32,8 @@ import logo from "./assets/logo.png";
 import patenT from "./assets/paten T.png";
 import patenR from "./assets/paten R.png";
 import patenL from "./assets/paten L.png";
+import hero from "./assets/hero.png";
+import PRR from "./assets/Pipa_Radial.png"
 import { Image } from "lucide-react";
 
 function App() {
@@ -192,7 +194,7 @@ function App() {
       <section
   id="beranda"
   className="relative pt-20 bg-cover bg-center"
-  style={{ backgroundImage: `url(${imeg1})` }}
+  style={{ backgroundImage: `url(${hero})` }}
 >
   {/* overlay */}
   <div className="absolute inset-0 bg-black/35"></div>
