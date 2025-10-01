@@ -33,6 +33,7 @@ import patenT from "./assets/paten T.png";
 import patenR from "./assets/paten R.png";
 import patenL from "./assets/paten L.png";
 import hero from "./assets/hero.png";
+import PRL from "./assets/Pipa_L.png";
 import tentangkami from "./assets/fotobareng.png";
 import PRR from "./assets/Pipa_Radial.png";
 import { Image } from "lucide-react";
@@ -104,14 +105,14 @@ function App() {
       type: "PRH Tipe L",
       id: "IDS000006552",
       description: "Cocok untuk sudut area dan space terbatas",
-      image: "/images/prh-l.png",
+      image: PRL,
       features: ["Efisien untuk sudut", "Instalasi mudah", "Hemat ruang"],
     },
     {
       type: "PRH Radial",
       id: "IDS000006553",
       description: "Solusi optimal untuk area terbuka dengan distribusi radial",
-      image: "/images/prh-radial.png",
+      image: PRR,
       features: [
         "Distribusi radial",
         "Optimal untuk lahan terbuka",
@@ -238,8 +239,6 @@ function App() {
               <h1
                 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
                 style={{ textShadow: "2px 2px 8px rgba(0,0,0,0.7)" }}
-
-
               >
                 Solusi Inovatif untuk
                 <span className="text-blue-500"> Konservasi Air Tanah</span> dan
@@ -485,8 +484,10 @@ function App() {
               <img
                 src={galleryImages[currentSlide].gambar}
                 alt={galleryImages[currentSlide].title}
-                className={`w-full h-full ${
-                  currentSlide === 4 ? "object-contain" : "object-cover"
+                className={`w-full h-full rounded-xl brightness-50 ${
+                  currentSlide === 4
+                    ? "object-contain brightness-100"
+                    : "object-cover brightness-50"
                 }`}
               />
               <div className="absolute inset-0 flex items-center justify-center">
