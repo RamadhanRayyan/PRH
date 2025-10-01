@@ -35,7 +35,8 @@ import patenL from "./assets/paten L.png";
 import hero from "./assets/hero.png";
 import PRL from "./assets/Pipa_L.png";
 import tentangkami from "./assets/fotobareng.png";
-import PRR from "./assets/Pipa_Radial.png";
+import PRR from "./assets/Pipa_R.png";
+import PRT from "./assets/Pipa_T.png";
 import { Image } from "lucide-react";
 
 function App() {
@@ -94,7 +95,7 @@ function App() {
       type: "PRH Tipe T",
       id: "IDS000006551",
       description: "Ideal untuk area dengan aliran air dari multiple direction",
-      image: hero,
+      image: PRT,
       features: [
         "Aliran multi-arah",
         "Kapasitas besar",
