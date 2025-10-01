@@ -193,30 +193,34 @@ function App() {
       {/* Hero Section */}
       <section
   id="beranda"
-  className="relative pt-20 bg-cover bg-center"
+  className="relative h-screen bg-cover bg-center flex items-center"
   style={{ backgroundImage: `url(${hero})` }}
 >
   {/* overlay */}
-  <div className="absolute inset-0 bg-black/35"></div>
+  <div className="absolute inset-0 bg-black/10"></div>
 
   {/* content */}
-  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+  <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       
       {/* Left text */}
       <div>
-        <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-          Solusi Inovatif untuk
-          <span className="text-blue-300"> Konservasi Air Tanah</span> dan
-          <span className="text-teal-300"> Penanggulangan Banjir</span>
-        </h1>
+        <h1
+  className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
+  style={{ textShadow: "2px 2px 8px rgba(0,0,0,0.7)" }}
+>
+  Solusi Inovatif untuk
+  <span className="text-blue-500"> Konservasi Air Tanah</span> dan
+  <span className="text-teal-500"> Penanggulangan Banjir</span>
+</h1>
+
         <p className="text-lg lg:text-xl text-gray-100 mb-8 leading-relaxed">
           CV. Rekayasa Nusa Mandiri mempersembahkan Pipa Resapan Horizontal
           (PRH) sebagai teknologi tepat guna untuk masa depan lingkungan
           berkelanjutan.
         </p>
         <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
-          {/* tombol / CTA nanti bisa ditaruh di sini */}
+          {/* tombol CTA */}
         </div>
       </div>
 
@@ -249,6 +253,7 @@ function App() {
 
 
 
+
       {/* Tentang Kami */}
       <section id="tentang-kami" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -263,47 +268,7 @@ function App() {
               pengendalian banjir, dan keberlanjutan lingkungan.
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
-              <div className="flex items-center mb-4">
-                <Target className="h-8 w-8 text-blue-600 mr-3" />
-                <h3 className="text-2xl font-bold text-gray-900">Visi Kami</h3>
-              </div>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Menjadi perusahaan inovatif yang berkontribusi pada pengelolaan
-                lingkungan dan air tanah di Indonesia.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-8">
-              <div className="flex items-center mb-4">
-                <Lightbulb className="h-8 w-8 text-teal-600 mr-3" />
-                <h3 className="text-2xl font-bold text-gray-900">Misi Kami</h3>
-              </div>
-              <ul className="space-y-3 text-lg text-gray-700">
-                <li className="flex items-start">
-                  <ChevronRight className="h-5 w-5 text-teal-600 mr-2 mt-1 flex-shrink-0" />
-                  <span>
-                    Menghadirkan teknologi tepat guna dalam bidang lingkungan
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <ChevronRight className="h-5 w-5 text-teal-600 mr-2 mt-1 flex-shrink-0" />
-                  <span>
-                    Mendukung program pemerintah dalam pengendalian banjir dan
-                    konservasi air tanah
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <ChevronRight className="h-5 w-5 text-teal-600 mr-2 mt-1 flex-shrink-0" />
-                  <span>
-                    Menyediakan produk berkualitas tinggi dengan harga
-                    terjangkau
-                  </span>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </section>
