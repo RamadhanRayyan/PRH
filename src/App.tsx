@@ -33,8 +33,8 @@ import patenT from "./assets/paten T.png";
 import patenR from "./assets/paten R.png";
 import patenL from "./assets/paten L.png";
 import hero from "./assets/hero.png";
-import tentangkami from "./assets/fotobareng.png"
-import PRR from "./assets/Pipa_Radial.png"
+import tentangkami from "./assets/fotobareng.png";
+import PRR from "./assets/Pipa_Radial.png";
 import { Image } from "lucide-react";
 
 function App() {
@@ -93,29 +93,63 @@ function App() {
       type: "PRH Tipe T",
       id: "IDS000006551",
       description: "Ideal untuk area dengan aliran air dari multiple direction",
+      image: hero,
       features: [
-        "Kapasitas resapan tinggi",
-        "Instalasi mudah",
-        "Maintenance minimal",
+        "Aliran multi-arah",
+        "Kapasitas besar",
+        "Cocok untuk area luas",
       ],
     },
     {
       type: "PRH Tipe L",
       id: "IDS000006552",
       description: "Cocok untuk sudut area dan space terbatas",
-      features: ["Desain compact", "Efisien space", "Instalasi fleksibel"],
+      image: "/images/prh-l.png",
+      features: ["Efisien untuk sudut", "Instalasi mudah", "Hemat ruang"],
     },
     {
       type: "PRH Radial",
       id: "IDS000006553",
       description: "Solusi optimal untuk area terbuka dengan distribusi radial",
+      image: "/images/prh-radial.png",
       features: [
-        "Coverage area luas",
-        "Distribusi merata",
-        "Efektivitas maksimal",
+        "Distribusi radial",
+        "Optimal untuk lahan terbuka",
+        "Perawatan sederhana",
       ],
     },
   ];
+
+  function ProductCards() {
+    return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 p-8">
+        {products.map((product, index) => (
+          <div key={index} className="group w-full h-64 [perspective:1000px]">
+            <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+              {/* Front */}
+              <div className="absolute inset-0 bg-white shadow-xl rounded-2xl flex flex-col justify-center items-center text-center p-4 [backface-visibility:hidden]">
+                <h3 className="text-xl font-bold text-gray-800">
+                  {product.type}
+                </h3>
+                <p className="text-gray-500 text-sm mt-2">{product.id}</p>
+                <p className="text-gray-600 text-xs mt-2">
+                  {product.description}
+                </p>
+              </div>
+              {/* Back */}
+              <div className="absolute inset-0 bg-gray-100 rounded-2xl overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden] flex items-center justify-center">
+                <img
+                  src={product.image}
+                  alt={product.type}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -169,22 +203,18 @@ function App() {
           {isMenuOpen && (
             <div className="md:hidden py-4 border-t">
               <nav className="flex flex-col space-y-2">
-                {[
-                  "Beranda",
-                  "Tentang Kami",
-                  "Produk",
-                  "Galeri",
-                  "Kontak",
-                ].map((item) => (
-                  <a
-                    key={item}
-                    href={`#${item.toLowerCase().replace(" ", "-")}`}
-                    className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item}
-                  </a>
-                ))}
+                {["Beranda", "Tentang Kami", "Produk", "Galeri", "Kontak"].map(
+                  (item) => (
+                    <a
+                      key={item}
+                      href={`#${item.toLowerCase().replace(" ", "-")}`}
+                      className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item}
+                    </a>
+                  )
+                )}
               </nav>
             </div>
           )}
@@ -193,210 +223,216 @@ function App() {
 
       {/* Hero Section */}
       <section
-  id="beranda"
-  className="relative h-screen bg-cover bg-center flex items-center"
-  style={{ backgroundImage: `url(${hero})` }}
->
-  {/* overlay */}
-  <div className="absolute inset-0 bg-black/10"></div>
+        id="beranda"
+        className="relative h-screen bg-cover bg-center flex items-center"
+        style={{ backgroundImage: `url(${hero})` }}
+      >
+        {/* overlay */}
+        <div className="absolute inset-0 bg-black/25"></div>
 
-  {/* content */}
-  <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      
-      {/* Left text */}
-      <div>
-        <h1
-  className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
-  style={{ textShadow: "2px 2px 8px rgba(0,0,0,0.7)" }}
->
-  Solusi Inovatif untuk
-  <span className="text-blue-500"> Konservasi Air Tanah</span> dan
-  <span className="text-teal-500"> Penanggulangan Banjir</span>
-</h1>
+        {/* content */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:pl-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left text */}
+            <div>
+              <h1
+                className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
+                style={{ textShadow: "2px 2px 8px rgba(0,0,0,0.7)" }}
 
-        <p className="text-lg lg:text-xl text-gray-100 mb-8 leading-relaxed">
-          CV. Rekayasa Nusa Mandiri mempersembahkan Pipa Resapan Horizontal
-          (PRH) sebagai teknologi tepat guna untuk masa depan lingkungan
-          berkelanjutan.
-        </p>
-        <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
-          {/* tombol CTA */}
-        </div>
-      </div>
 
-      {/* Right card */}
-      <div className="relative">
-        <div className="bg-gradient-to-r from-blue-500 to-teal-500 rounded-2xl p-8 text-white transform rotate-2 hover:rotate-0 transition-transform duration-300 shadow-lg">
-          <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
-            <Droplets className="h-16 w-16 mb-4" />
-            <h3 className="text-2xl font-bold mb-2">Teknologi PRH</h3>
-            <p className="mb-4">
-              Pipa Resapan Horizontal untuk solusi banjir dan konservasi air tanah
-            </p>
-            <div className="grid grid-cols-2 gap-4 text-sm">
-              <div className="flex items-center">
-                <Shield className="h-4 w-4 mr-2" />
-                <span>Ramah Lingkungan</span>
-              </div>
-              <div className="flex items-center">
-                <TrendingUp className="h-4 w-4 mr-2" />
-                <span>Efektif & Efisien</span>
+              >
+                Solusi Inovatif untuk
+                <span className="text-blue-500"> Konservasi Air Tanah</span> dan
+                <span className="text-teal-500"> Penanggulangan Banjir</span>
+              </h1>
+
+              <p className="text-lg lg:text-xl text-gray-100 mb-8 leading-relaxed">
+                CV. Rekayasa Nusa Mandiri mempersembahkan Pipa Resapan
+                Horizontal (PRH) sebagai teknologi tepat guna untuk masa depan
+                lingkungan berkelanjutan.
+              </p>
+              <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+                {/* tombol CTA */}
               </div>
             </div>
+
+            {/* Right card */}
           </div>
         </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
+      </section>
 
       {/* Tentang Kami */}
-     <section id="tentang-kami" className="pt-20 pb-10 bg-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-12">
-      <h2 className="text-4xl font-bold text-gray-900 mb-4">
-        Tentang Kami
-      </h2>
-      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-        CV. Rekayasa Nusa Mandiri adalah perusahaan yang bergerak di
-        bidang inovasi teknologi lingkungan dan infrastruktur. Kami
-        berkomitmen menghadirkan solusi cerdas untuk konservasi air tanah,
-        pengendalian banjir, dan keberlanjutan lingkungan.
-      </p>
-    </div>
+      <section id="tentang-kami" className="pt-20 pb-10 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Tentang Kami
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              CV. Rekayasa Nusa Mandiri adalah perusahaan yang bergerak di
+              bidang inovasi teknologi lingkungan dan infrastruktur. Kami
+              berkomitmen menghadirkan solusi cerdas untuk konservasi air tanah,
+              pengendalian banjir, dan keberlanjutan lingkungan.
+            </p>
+          </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-6">
-      {/* isi tambahan kalau ada */}
-    </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-6">
+            {/* isi tambahan kalau ada */}
+          </div>
 
-    {/* Foto lebih rapet atas-bawah */}
-    <div className="w-full flex justify-center">
-      <img
-        src={tentangkami}
-        alt="tentangKami"
-        className="max-w-3xl w-full h-auto object-contain rounded-2xl shadow-md"
-      />
-    </div>
-  </div>
-</section>
-
-
-
+          {/* Foto lebih rapet atas-bawah */}
+          <div className="w-full flex justify-center">
+            <img
+              src={tentangkami}
+              alt="tentangKami"
+              className="max-w-3xl w-full h-auto object-contain rounded-2xl shadow-md"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Produk Unggulan */}
       <section id="produk" className="py-20 bg-gray-50">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-16">
-      <h2 className="text-4xl font-bold text-gray-900 mb-4">
-        Produk Unggulan
-      </h2>
-      <p className="text-xl text-gray-600">
-        Pipa Resapan Horizontal (PRH) - Teknologi Inovatif untuk Lingkungan
-      </p>
-    </div>
-
-    {/* Produk Cards */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-      {products.map((product, index) => (
-        <div
-          key={index}
-          className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden"
-        >
-          <div className="bg-gradient-to-r from-blue-600 to-teal-600 p-6 text-white">
-            <h3 className="text-2xl font-bold mb-2">{product.type}</h3>
-            <p className="text-blue-100">ID: {product.id}</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Produk Unggulan
+            </h2>
+            <p className="text-xl text-gray-600">
+              Pipa Resapan Horizontal (PRH) - Teknologi Inovatif untuk
+              Lingkungan
+            </p>
           </div>
-          <div className="p-6">
-            <p className="text-gray-600 mb-4">{product.description}</p>
-            <ul className="space-y-2">
-              {product.features.map((feature, idx) => (
-                <li key={idx} className="flex items-center text-gray-700">
-                  <ChevronRight className="h-4 w-4 text-green-500 mr-2" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
+
+          {/* Produk Cards */}
+          {/* Produk Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {products.map((product, index) => (
+              <div
+                key={index}
+                className="group w-full h-80 [perspective:1000px]"
+              >
+                <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                  {/* Front Side */}
+                  <div className="absolute inset-0 bg-white rounded-2xl shadow-lg overflow-hidden [backface-visibility:hidden]">
+                    <div className="bg-gradient-to-r from-blue-600 to-teal-600 p-6 text-white">
+                      <h3 className="text-2xl font-bold mb-2">
+                        {product.type}
+                      </h3>
+                      <p className="text-blue-100">ID: {product.id}</p>
+                    </div>
+                    <div className="p-6">
+                      <p className="text-gray-600">{product.description}</p>
+                    </div>
+                    <div className=" pl-5">
+                      <ul className="space-y-2">
+                        {" "}
+                        {product.features.map((feature, idx) => (
+                          <li
+                            key={idx}
+                            className="flex items-center text-gray-700"
+                          >
+                            {" "}
+                            <ChevronRight className="h-4 w-4 text-green-500 mr-2" />{" "}
+                            <span>{feature}</span>{" "}
+                          </li>
+                        ))}{" "}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Back Side */}
+                  <div className="absolute inset-0 rounded-2xl overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                    <img
+                      src={product.image} // tambahin property image di products lu
+                      alt={product.type}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Tambahan Sertifikat */}
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Sertifikat Paten
+            </h3>
+            <p className="text-gray-600">
+              Inovasi PRH sudah mendapatkan perlindungan hukum melalui paten
+              sederhana.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <img
+              src={patenT}
+              alt="Sertifikat Paten PRH Tipe T"
+              className="rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+            />
+            <img
+              src={patenR}
+              alt="Sertifikat Paten PRH Radial"
+              className="rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+            />
+            <img
+              src={patenL}
+              alt="Sertifikat Paten PRH Tipe L"
+              className="rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+
+          {/* Manfaat & Keunggulan */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-16">
+            <div className="bg-white rounded-2xl shadow-lg p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <Award className="h-8 w-8 text-green-600 mr-3" />
+                Manfaat PRH
+              </h3>
+              <ul className="space-y-4">
+                {[
+                  "Mengatasi banjir & genangan air",
+                  "Menambah ketersediaan air tanah",
+                  "Mengurangi intrusi air laut",
+                  "Menjaga keseimbangan ekosistem",
+                ].map((benefit, index) => (
+                  <li
+                    key={index}
+                    className="flex items-center text-lg text-gray-700"
+                  >
+                    <div className="w-2 h-2 bg-green-500 rounded-full mr-4"></div>
+                    <span>{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-lg p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <TrendingUp className="h-8 w-8 text-blue-600 mr-3" />
+                Keunggulan PRH
+              </h3>
+              <ul className="space-y-4">
+                {[
+                  "Harga lebih murah dibanding alternatif lain",
+                  "Pembuatan & perawatan mudah",
+                  "Tidak membutuhkan lahan luas",
+                  "Tetap efektif walau muka air tanah dangkal",
+                ].map((advantage, index) => (
+                  <li
+                    key={index}
+                    className="flex items-center text-lg text-gray-700"
+                  >
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-4"></div>
+                    <span>{advantage}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-      ))}
-    </div>
-
-    {/* Tambahan Sertifikat */}
-    <div className="text-center mb-12">
-      <h3 className="text-2xl font-bold text-gray-900 mb-4">Sertifikat Paten</h3>
-      <p className="text-gray-600">
-        Inovasi PRH sudah mendapatkan perlindungan hukum melalui paten sederhana.
-      </p>
-    </div>
-
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <img
-        src={patenT}
-        alt="Sertifikat Paten PRH Tipe T"
-        className="rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
-      />
-      <img
-        src={patenR}
-        alt="Sertifikat Paten PRH Radial"
-        className="rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
-      />
-      <img
-        src={patenL}
-        alt="Sertifikat Paten PRH Tipe L"
-        className="rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
-      />
-    </div>
-
-    {/* Manfaat & Keunggulan */}
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-16">
-      <div className="bg-white rounded-2xl shadow-lg p-8">
-        <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-          <Award className="h-8 w-8 text-green-600 mr-3" />
-          Manfaat PRH
-        </h3>
-        <ul className="space-y-4">
-          {[
-            "Mengatasi banjir & genangan air",
-            "Menambah ketersediaan air tanah",
-            "Mengurangi intrusi air laut",
-            "Menjaga keseimbangan ekosistem",
-          ].map((benefit, index) => (
-            <li key={index} className="flex items-center text-lg text-gray-700">
-              <div className="w-2 h-2 bg-green-500 rounded-full mr-4"></div>
-              <span>{benefit}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="bg-white rounded-2xl shadow-lg p-8">
-        <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-          <TrendingUp className="h-8 w-8 text-blue-600 mr-3" />
-          Keunggulan PRH
-        </h3>
-        <ul className="space-y-4">
-          {[
-            "Harga lebih murah dibanding alternatif lain",
-            "Pembuatan & perawatan mudah",
-            "Tidak membutuhkan lahan luas",
-            "Tetap efektif walau muka air tanah dangkal",
-          ].map((advantage, index) => (
-            <li key={index} className="flex items-center text-lg text-gray-700">
-              <div className="w-2 h-2 bg-blue-500 rounded-full mr-4"></div>
-              <span>{advantage}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
+      </section>
 
       {/* Implementasi & Proyek */}
       <section id="implementasi" className="py-20 bg-white">
@@ -530,21 +566,23 @@ function App() {
                   <span className="font-medium text-gray-700">
                     Curah Hujan Tinggi
                   </span>
-                  <span className="text-2xl font-bold text-green-600">
-                    97%
-                  </span>
+                  <span className="text-2xl font-bold text-green-600">97%</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-white rounded-lg">
                   <span className="font-medium text-gray-700">
                     Dominasi Lahan Sawah
                   </span>
-                  <span className="text-2xl font-bold text-orange-600">25%</span>
+                  <span className="text-2xl font-bold text-orange-600">
+                    25%
+                  </span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-white rounded-lg">
                   <span className="font-medium text-gray-700">
                     Risiko Banjir
                   </span>
-                  <span className="text-2xl font-bold text-red-600">20-30%</span>
+                  <span className="text-2xl font-bold text-red-600">
+                    20-30%
+                  </span>
                 </div>
               </div>
             </div>
@@ -578,7 +616,7 @@ function App() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 name: "Instagram",
@@ -600,13 +638,6 @@ function App() {
                 color: "from-red-500 to-red-600",
                 handle: "Pipa Resapan Horizontal",
                 url: "https://bit.ly/piparesapanhorisontal",
-              },
-              {
-                name: "Blog",
-                icon: ExternalLink,
-                color: "from-green-500 to-green-600",
-                handle: "Blog Resmi",
-                url: "https://piparesapanhorisontal.blogspot.com/",
               },
             ].map((social, index) => (
               <a
@@ -637,7 +668,7 @@ function App() {
                 pemerintah
               </p>
               <a
-                href="https://katalog.inaproc.id/rekayasa-nusa-mandiri/pipa-resapan-horisontal"
+                href="https://katalog.inaproc.id/rekayasa-nusa-mandiri/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
@@ -652,72 +683,71 @@ function App() {
 
       {/* Kontak */}
       <section id="kontak" className="py-20 bg-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-16">
-      <h2 className="text-4xl font-bold text-gray-900 mb-4">
-        Kontak Kami
-      </h2>
-      <p className="text-xl text-gray-600">
-        Hubungi Kami untuk Kerjasama & Pemesanan PRH
-      </p>
-    </div>
-
-    <div className="gap-12">
-      <div className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl p-8">
-        <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center justify-center">
-          Informasi Perusahaan
-        </h3>
-
-        {/* diubah jadi responsif */}
-        <div className="flex flex-col md:flex-row items-stretch md:items-start justify-center gap-8">
-          
-          {/* alamat */}
-          <div className="flex items-start space-x-4">
-            <div className="bg-blue-600 p-3 rounded-lg">
-              <MapPin className="h-6 w-6 text-white" />
-            </div>
-            <div>
-              <h4 className="font-semibold text-gray-900 mb-1">
-                Alamat Kantor
-              </h4>
-              <p className="text-gray-600">
-                Jl.Bulusan Utara Raya Kec.Tembalang Kota Semarang
-                <br />
-                Jawa Tengah, Indonesia 50277
-              </p>
-            </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Kontak Kami
+            </h2>
+            <p className="text-xl text-gray-600">
+              Hubungi Kami untuk Kerjasama & Pemesanan PRH
+            </p>
           </div>
 
-          {/* telepon */}
-          <div className="flex items-start space-x-4">
-            <div className="bg-green-600 p-3 rounded-lg">
-              <Phone className="h-6 w-6 text-white" />
-            </div>
-            <div>
-              <h4 className="font-semibold text-gray-900 mb-1">
-                Telepon / WhatsApp
-              </h4>
-              <p className="text-gray-600">+62 813 9029 4115</p>
+          <div className="gap-12">
+            <div className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center justify-center">
+                Informasi Perusahaan
+              </h3>
+
+              {/* diubah jadi responsif */}
+              <div className="flex flex-col md:flex-row items-stretch md:items-start justify-center gap-8">
+                {/* alamat */}
+                <div className="flex items-start space-x-4">
+                  <div className="bg-blue-600 p-3 rounded-lg">
+                    <MapPin className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">
+                      Alamat Kantor
+                    </h4>
+                    <p className="text-gray-600">
+                      Jl.Bulusan Utara Raya Kec.Tembalang Kota Semarang
+                      <br />
+                      Jawa Tengah, Indonesia 50277
+                    </p>
+                  </div>
+                </div>
+
+                {/* telepon */}
+                <div className="flex items-start space-x-4">
+                  <div className="bg-green-600 p-3 rounded-lg">
+                    <Phone className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">
+                      Telepon / WhatsApp
+                    </h4>
+                    <p className="text-gray-600">+62 813 9029 4115</p>
+                  </div>
+                </div>
+
+                {/* email */}
+                <div className="flex items-start space-x-4">
+                  <div className="bg-purple-600 p-3 rounded-lg">
+                    <Mail className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
+                    <p className="text-gray-600">
+                      rekayasanusamandiri@gmail.com
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
-          {/* email */}
-          <div className="flex items-start space-x-4">
-            <div className="bg-purple-600 p-3 rounded-lg">
-              <Mail className="h-6 w-6 text-white" />
-            </div>
-            <div>
-              <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-              <p className="text-gray-600">rekayasanusamandiri@gmail.com</p>
-            </div>
-          </div>
-
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+      </section>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
