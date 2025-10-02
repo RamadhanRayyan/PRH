@@ -37,7 +37,9 @@ import PRL from "./assets/Pipa_L.png";
 import tentangkami from "./assets/fotobareng.png";
 import PRR from "./assets/Pipa_R.png";
 import PRT from "./assets/Pipa_T.png";
+import Implementation from "./Implementation";
 import { Image } from "lucide-react";
+import { Link, Route, Routes } from "react-router-dom";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -121,38 +123,6 @@ function App() {
       ],
     },
   ];
-
-  function ProductCards() {
-    return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 p-8">
-        {products.map((product, index) => (
-          <div key={index} className="group w-full h-64 [perspective:1000px]">
-            <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-              {/* Front */}
-              <div className="absolute inset-0 bg-white shadow-xl rounded-2xl flex flex-col justify-center items-center text-center p-4 [backface-visibility:hidden]">
-                <h3 className="text-xl font-bold text-gray-800">
-                  {product.type}
-                </h3>
-                <p className="text-gray-500 text-sm mt-2">{product.id}</p>
-                <p className="text-gray-600 text-xs mt-2">
-                  {product.description}
-                </p>
-              </div>
-              {/* Back */}
-              <div className="absolute inset-0 bg-gray-100 rounded-2xl overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden] flex items-center justify-center">
-                <img
-                  src={product.image}
-                  alt={product.type}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -175,17 +145,22 @@ function App() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">
-              {["Beranda", "Tentang Kami", "Produk", "Galeri", "Kontak"].map(
-                (item) => (
-                  <a
-                    key={item}
-                    href={`#${item.toLowerCase().replace(" ", "-")}`}
-                    className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
-                  >
-                    {item}
-                  </a>
-                )
-              )}
+              {[
+                "Beranda",
+                "Tentang Kami",
+                "Produk",
+                "Implementasi",
+                "Galeri",
+                "Kontak",
+              ].map((item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase().replace(" ", "-")}`}
+                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                >
+                  {item}
+                </a>
+              ))}
             </nav>
 
             {/* Mobile Menu Button */}
@@ -205,18 +180,23 @@ function App() {
           {isMenuOpen && (
             <div className="md:hidden py-4 border-t">
               <nav className="flex flex-col space-y-2">
-                {["Beranda", "Tentang Kami", "Produk", "Galeri", "Kontak"].map(
-                  (item) => (
-                    <a
-                      key={item}
-                      href={`#${item.toLowerCase().replace(" ", "-")}`}
-                      className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item}
-                    </a>
-                  )
-                )}
+                {[
+                  "Beranda",
+                  "Tentang Kami",
+                  "Produk",
+                  "Implementasi",
+                  "Galeri",
+                  "Kontak",
+                ].map((item) => (
+                  <a
+                    key={item}
+                    href={`#${item.toLowerCase().replace(" ", "-")}`}
+                    className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item}
+                  </a>
+                ))}
               </nav>
             </div>
           )}
@@ -464,6 +444,16 @@ function App() {
                 <div className="text-sm text-gray-600">{stat.label}</div>
               </div>
             ))}
+          </div>
+
+          {/* Tombol Lihat Detail */}
+          <div className="text-center mt-12">
+            <Link
+              to="/implementasi-detail"
+              className="inline-block px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition"
+            >
+              Lihat Detail Implementasi
+            </Link>
           </div>
         </div>
       </section>
@@ -800,6 +790,14 @@ function App() {
                     className="hover:text-white transition-colors"
                   >
                     Produk
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#implementasi"
+                    className="hover:text-white transition-colors"
+                  >
+                    Implementasi
                   </a>
                 </li>
                 <li>
