@@ -10,6 +10,7 @@ import img1 from "./assets/gambar prh 3.0.png";
 import img2 from "./assets/gambar prh 2.0.png";
 import img3 from "./assets/gambar prh 5.0.png";
 import img4 from "./assets/gambar prh 4.0.png";
+import background from "./assets/background.png"
 
 export default function ImplementasiPRH() {
   const data = {
@@ -25,77 +26,87 @@ export default function ImplementasiPRH() {
 
   return (
     <div
-      className="relative h-[650px] bg-cover bg-center"
-      style={{ backgroundImage: `url(${bgImage})` }}
+      className="relative bg-no-repeat bg-cover bg-center"
+      style={{ backgroundImage: `url(${background})` }}
     >
-      {/* Overlay biar teks kebaca */}
-      <div className="absolute inset-0 bg-black/25"></div>
+      {/* Overlay gelap */}
+      <div className="absolute inset-0 bg-black/25" />
 
-      {/* Konten di atas background */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 text-white">
+      {/* Konten utama */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-20 text-white text-center">
+        
         {/* Judul */}
         <h1
-          className="text-3xl md:text-4xl font-bold text-center mb-12"
+          className="text-lg sm:text-2xl md:text-4xl font-bold mb-6 leading-snug"
           data-aos="fade-up"
         >
           Implementasi Program Pipa Resapan Horizontal (PRH)
         </h1>
 
         {/* Grid Info */}
-...
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-  <div
-    className="bg-white/90 backdrop-blur-sm rounded-2xl shadow p-6 text-center"
-    data-aos="fade-up"
-  >
-    <h2 className="text-xl font-semibold text-gray-900">Total Proyek</h2>
-    <p className="text-3xl font-bold text-blue-600 mt-2">
-      <CountUp end={data.totalProyek} duration={3} />
-    </p>
-  </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
+          <div
+            className="bg-white/90 backdrop-blur-sm rounded-2xl shadow p-4 sm:p-6 text-center"
+            data-aos="fade-up"
+          >
+            <h2 className="text-sm sm:text-base font-semibold text-gray-900">
+              Total Proyek
+            </h2>
+            <p className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mt-1">
+              <CountUp end={data.totalProyek} duration={3.5} />
+            </p>
+          </div>
 
-  <div
-    className="bg-white/90 backdrop-blur-sm rounded-2xl shadow p-6 text-center"
-    data-aos="fade-up"
-  >
-    <h2 className="text-xl font-semibold text-gray-900">Unit Terpasang</h2>
-    <p className="text-3xl font-bold text-blue-600 mt-2">
-      <CountUp end={data.totalUnit} duration={3} />
-    </p>
-  </div>
+          <div
+            className="bg-white/90 backdrop-blur-sm rounded-2xl shadow p-4 sm:p-6 text-center"
+            data-aos="fade-up"
+          >
+            <h2 className="text-sm sm:text-base font-semibold text-gray-900">
+              Unit Terpasang
+            </h2>
+            <p className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mt-1">
+              <CountUp end={data.totalUnit} duration={3.5} />
+            </p>
+          </div>
 
-  <div
-    className="bg-white/90 backdrop-blur-sm rounded-2xl shadow p-6 text-center"
-    data-aos="fade-up"
-  >
-    <h2 className="text-xl font-semibold text-gray-900">Wilayah Terlayani</h2>
-    <ul className="mt-3 space-y-1">
-      {data.wilayah.map((w, idx) => (
-        <li key={idx} className="text-lg font-medium text-blue-600">
-          {w}
-        </li>
-      ))}
-    </ul>
-  </div>
+          <div
+            className="bg-white/90 backdrop-blur-sm rounded-2xl shadow p-4 sm:p-6 text-center"
+            data-aos="fade-up"
+          >
+            <h2 className="text-sm sm:text-base font-semibold text-gray-900">
+              Wilayah Terlayani
+            </h2>
+            <ul className="mt-2 space-y-1">
+              {data.wilayah.map((w, idx) => (
+                <li
+                  key={idx}
+                  className="text-xs sm:text-sm md:text-base font-medium text-blue-600"
+                >
+                  {w}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-  <div
-    className="bg-white/90 backdrop-blur-sm rounded-2xl shadow p-6 text-center"
-    data-aos="fade-up"
-  >
-    <h2 className="text-xl font-semibold text-gray-900">Pengalaman</h2>
-    <p className="text-3xl font-bold text-blue-600 mt-2">
-      <CountUp end={data.pengalaman} duration={3} /> Tahun
-    </p>
-  </div>
-</div>
-
+          <div
+            className="bg-white/90 backdrop-blur-sm rounded-2xl shadow p-4 sm:p-6 text-center"
+            data-aos="fade-up"
+          >
+            <h2 className="text-sm sm:text-base font-semibold text-gray-900">
+              Pengalaman
+            </h2>
+            <p className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mt-1">
+              <CountUp end={data.pengalaman} duration={3.5} /> Tahun
+            </p>
+          </div>
+        </div>
 
         {/* Deskripsi */}
         <div
-          className="bg-white/0 backdrop-blur-md rounded-2xl p-6 md:p-8 mb-12 shadow-lg"
+          className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 md:p-8 mb-6 shadow-lg"
           data-aos="fade-up"
         >
-          <p className="text-gray-100 leading-relaxed text-justify">
+          <p className="text-gray-100 leading-relaxed text-justify text-xs sm:text-sm md:text-base">
             Pipa Resapan Horizontal (PRH) merupakan teknologi sederhana yang
             berfungsi mengurangi limpasan air hujan sekaligus meningkatkan
             ketersediaan air tanah. PRH efektif diterapkan pada wilayah rawan
@@ -113,23 +124,23 @@ export default function ImplementasiPRH() {
         </div>
 
         {/* Galeri Gambar */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 pt-4">
           {[img1, img2, img3, img4].map((src, idx) => (
             <img
               key={idx}
               src={src}
               alt={`PRH ${idx + 1}`}
-              className="w-full h-64 object-cover rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+              className="w-full h-40 sm:h-52 md:h-64 object-cover rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
               data-aos="fade-up"
             />
           ))}
         </div>
 
         {/* Tombol Back */}
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-8">
           <Link
             to="/"
-            className="mt-12 px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl shadow hover:bg-blue-700 transition"
+            className="px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 text-white text-sm sm:text-base font-semibold rounded-xl shadow hover:bg-blue-700 transition"
           >
             ← Kembali
           </Link>
