@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import CountUp from "react-countup";
 
 // Import asset
 import bgImage from "./assets/Pipa_L.png";
@@ -24,11 +25,11 @@ export default function ImplementasiPRH() {
 
   return (
     <div
-      className="relative min-h-screen bg-cover bg-center"
+      className="relative h-[650px] bg-cover bg-center"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Overlay biar teks kebaca */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0 bg-black/25"></div>
 
       {/* Konten di atas background */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 text-white">
@@ -41,44 +42,53 @@ export default function ImplementasiPRH() {
         </h1>
 
         {/* Grid Info */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          <div
-            className="bg-white/90 backdrop-blur-sm rounded-2xl shadow p-6 text-center"
-            data-aos="fade-up"
-          >
-            <h2 className="text-xl font-semibold text-gray-900">Total Proyek</h2>
-            <p className="text-3xl font-bold text-blue-600 mt-2">{data.totalProyek}</p>
-          </div>
-          <div
-            className="bg-white/90 backdrop-blur-sm rounded-2xl shadow p-6 text-center"
-            data-aos="fade-up"
-          >
-            <h2 className="text-xl font-semibold text-gray-900">Unit Terpasang</h2>
-            <p className="text-3xl font-bold text-blue-600 mt-2">{data.totalUnit}</p>
-          </div>
-          <div
-            className="bg-white/90 backdrop-blur-sm rounded-2xl shadow p-6 text-center"
-            data-aos="fade-up"
-          >
-            <h2 className="text-xl font-semibold text-gray-900">Wilayah Terlayani</h2>
-            <ul className="mt-3 space-y-1">
-              {data.wilayah.map((w, idx) => (
-                <li key={idx} className="text-lg font-medium text-blue-600">
-                  {w}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div
-            className="bg-white/90 backdrop-blur-sm rounded-2xl shadow p-6 text-center"
-            data-aos="fade-up"
-          >
-            <h2 className="text-xl font-semibold text-gray-900">Pengalaman</h2>
-            <p className="text-3xl font-bold text-blue-600 mt-2">
-              {data.pengalaman} Tahun
-            </p>
-          </div>
-        </div>
+...
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+  <div
+    className="bg-white/90 backdrop-blur-sm rounded-2xl shadow p-6 text-center"
+    data-aos="fade-up"
+  >
+    <h2 className="text-xl font-semibold text-gray-900">Total Proyek</h2>
+    <p className="text-3xl font-bold text-blue-600 mt-2">
+      <CountUp end={data.totalProyek} duration={3} />
+    </p>
+  </div>
+
+  <div
+    className="bg-white/90 backdrop-blur-sm rounded-2xl shadow p-6 text-center"
+    data-aos="fade-up"
+  >
+    <h2 className="text-xl font-semibold text-gray-900">Unit Terpasang</h2>
+    <p className="text-3xl font-bold text-blue-600 mt-2">
+      <CountUp end={data.totalUnit} duration={3} />
+    </p>
+  </div>
+
+  <div
+    className="bg-white/90 backdrop-blur-sm rounded-2xl shadow p-6 text-center"
+    data-aos="fade-up"
+  >
+    <h2 className="text-xl font-semibold text-gray-900">Wilayah Terlayani</h2>
+    <ul className="mt-3 space-y-1">
+      {data.wilayah.map((w, idx) => (
+        <li key={idx} className="text-lg font-medium text-blue-600">
+          {w}
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div
+    className="bg-white/90 backdrop-blur-sm rounded-2xl shadow p-6 text-center"
+    data-aos="fade-up"
+  >
+    <h2 className="text-xl font-semibold text-gray-900">Pengalaman</h2>
+    <p className="text-3xl font-bold text-blue-600 mt-2">
+      <CountUp end={data.pengalaman} duration={3} /> Tahun
+    </p>
+  </div>
+</div>
+
 
         {/* Deskripsi */}
         <div
@@ -103,7 +113,7 @@ export default function ImplementasiPRH() {
         </div>
 
         {/* Galeri Gambar */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-20">
           {[img1, img2, img3, img4].map((src, idx) => (
             <img
               key={idx}
