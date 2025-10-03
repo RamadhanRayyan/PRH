@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 import App from "./App";
 import Implementation from "./Implementation";
 
+// ✅ ScrollToTop Component
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll ke paling atas saat route berubah
+  }, [pathname]);
+
+  return null;
+}
+
 export const Routing = () => {
   const location = useLocation();
 
   return (
     <AnimatePresence mode="wait">
+      <ScrollToTop /> {/* ✅ Tambahkan di sini */}
       <Routes location={location} key={location.pathname}>
         <Route
           path="/"
