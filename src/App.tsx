@@ -44,6 +44,7 @@ import { Link, Route, Routes } from "react-router-dom";
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  
 
   const galleryImages = [
     {
@@ -92,37 +93,40 @@ function App() {
     { location: "Magelang", units: 22, funding: "Dinas PU", year: "2024" },
   ];
 
-  const products = [
-    {
-      type: "PRH Tipe T",
-      id: "IDS000006551",
-      description: "Ideal untuk area dengan aliran air dari multiple direction",
-      image: PRT,
-      features: [
-        "Aliran multi-arah",
-        "Kapasitas besar",
-        "Cocok untuk area luas",
-      ],
-    },
-    {
-      type: "PRH Tipe L",
-      id: "IDS000006552",
-      description: "Cocok untuk sudut area dan space terbatas",
-      image: PRL,
-      features: ["Efisien untuk sudut", "Instalasi mudah", "Hemat ruang"],
-    },
-    {
-      type: "PRH Radial",
-      id: "IDS000006553",
-      description: "Solusi optimal untuk area terbuka dengan distribusi radial",
-      image: PRR,
-      features: [
-        "Distribusi radial",
-        "Optimal untuk lahan terbuka",
-        "Perawatan sederhana",
-      ],
-    },
-  ];
+const products = [
+  {
+    type: "PRH Tipe T",
+    id: "IDS000006551",
+    description: "Ideal untuk area dengan aliran air dari multiple direction",
+    image: PRT,
+    features: [
+      "Aliran multi-arah",
+      "Kapasitas besar",
+      "Cocok untuk area luas",
+    ],
+  },
+  {
+    type: "PRH Tipe L",
+    id: "IDS000006552",
+    description: "Cocok untuk sudut area dan space terbatas",
+    image: PRL,
+    features: ["Efisien untuk sudut", "Instalasi mudah", "Hemat ruang"],
+  },
+  {
+    type: "PRH Radial",
+    id: "IDS000006553",
+    description: "Solusi optimal untuk area terbuka dengan distribusi radial",
+    image: PRR,
+    features: [
+      "Distribusi radial",
+      "Optimal untuk lahan terbuka",
+      "Perawatan sederhana",
+    ],
+  },
+];
+
+const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -286,53 +290,88 @@ function App() {
 
           {/* Produk Cards */}
           {/* Produk Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {products.map((product, index) => (
-              <div
-                key={index}
-                className="group w-full h-80 [perspective:1000px]"
-              >
-                <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                  {/* Front Side */}
-                  <div className="absolute inset-0 bg-white rounded-2xl shadow-lg overflow-hidden [backface-visibility:hidden]">
-                    <div className="bg-gradient-to-r from-blue-600 to-teal-600 p-6 text-white">
-                      <h3 className="text-2xl font-bold mb-2">
-                        {product.type}
-                      </h3>
-                      <p className="text-blue-100">ID: {product.id}</p>
-                    </div>
-                    <div className="p-6">
-                      <p className="text-gray-600">{product.description}</p>
-                    </div>
-                    <div className=" pl-5">
-                      <ul className="space-y-2">
-                        {" "}
-                        {product.features.map((feature, idx) => (
-                          <li
-                            key={idx}
-                            className="flex items-center text-gray-700"
-                          >
-                            {" "}
-                            <ChevronRight className="h-4 w-4 text-green-500 mr-2" />{" "}
-                            <span>{feature}</span>{" "}
-                          </li>
-                        ))}{" "}
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Back Side */}
-                  <div className="absolute inset-0 rounded-2xl overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden]">
-                    <img
-                      src={product.image} // tambahin property image di products lu
-                      alt={product.type}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+    <div className="p-8">
+      {/* Grid Produk */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        {products.map((product, index) => (
+          <div key={index} className="group w-full h-80 [perspective:1000px]">
+            <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+              
+              {/* FRONT SIDE */}
+              <div className="absolute inset-0 bg-white rounded-2xl shadow-lg overflow-hidden [backface-visibility:hidden]">
+                <div className="bg-gradient-to-r from-blue-600 to-teal-600 p-6 text-white">
+                  <h3 className="text-2xl font-bold mb-2">{product.type}</h3>
+                  <p className="text-blue-100">ID: {product.id}</p>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600">{product.description}</p>
+                </div>
+                <div className="pl-5">
+                  <ul className="space-y-2">
+                    {product.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center text-gray-700">
+                        <ChevronRight className="h-4 w-4 text-green-500 mr-2" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-            ))}
+
+              {/* BACK SIDE */}
+              <div className="absolute inset-0 rounded-2xl overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                <img
+                  src={product.image}
+                  alt={product.type}
+                  className="w-full h-full object-cover"
+                />
+                {/* Tombol lihat detail */}
+                <div className="absolute bottom-3 left-0 right-0 flex justify-center">
+                  <button
+                    onClick={() => setSelectedProduct(product)}
+                    className="px-3 py-1 text-sm bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition"
+                  >
+                    Lihat Detail
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
+        ))}
+      </div>
+
+      {/* Overlay Detail */}
+      {selectedProduct && (
+  <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 transition-opacity duration-300 animate-fadeIn">
+    <div className="bg-white rounded-2xl shadow-lg p-6 w-[90%] h-[90%] relative overflow-y-auto transform transition-all duration-300 scale-95 opacity-0 animate-slideUp">
+      <button
+        onClick={() => setSelectedProduct(null)}
+        className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
+      >
+        <X className="w-6 h-6" />
+      </button>
+      <img
+        src={selectedProduct.image}
+        alt={selectedProduct.type}
+        className="w-full h-64 object-contain rounded-lg mb-4"
+      />
+      <h2 className="text-2xl font-bold mb-2">{selectedProduct.type}</h2>
+      <p className="text-gray-600 mb-4">{selectedProduct.description}</p>
+      <ul className="space-y-2">
+        {selectedProduct.features.map((f: string, i: number) => (
+          <li key={i} className="flex items-center text-gray-700">
+            <ChevronRight className="h-4 w-4 text-green-500 mr-2" />
+            {f}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+)}
+
+
+    </div>
+  );
 
           {/* Tambahan Sertifikat */}
           <div className="text-center mb-12">
