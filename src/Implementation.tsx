@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import CountUp from "react-countup";
+import { Typewriter } from "react-simple-typewriter";
 
 // Import asset
 import bgImage from "./assets/Pipa_L.png";
@@ -80,7 +81,7 @@ export default function ImplementasiPRH() {
               {data.wilayah.map((w, idx) => (
                 <li
                   key={idx}
-                  className="text-xs sm:text-sm md:text-base font-medium text-blue-600"
+                  className="text-xs sm:text-sm md:text-base font-bold text-blue-600"
                 >
                   {w}
                 </li>
@@ -103,25 +104,22 @@ export default function ImplementasiPRH() {
 
         {/* Deskripsi */}
         <div
-          className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 md:p-8 mb-6 shadow-lg"
-          data-aos="fade-up"
-        >
-          <p className="text-gray-100 leading-relaxed text-justify text-xs sm:text-sm md:text-base">
-            Pipa Resapan Horizontal (PRH) merupakan teknologi sederhana yang
-            berfungsi mengurangi limpasan air hujan sekaligus meningkatkan
-            ketersediaan air tanah. PRH efektif diterapkan pada wilayah rawan
-            banjir maupun kekeringan dengan cara meresapkan air permukaan ke
-            dalam tanah. Hingga saat ini, telah dipasang{" "}
-            <span className="font-semibold text-blue-300">{data.totalUnit} unit</span>{" "}
-            PRH di berbagai lokasi strategis, khususnya di{" "}
-            <span className="font-semibold text-blue-300">
-              {data.wilayah.join(", ")}
-            </span>
-            , melalui dukungan pemerintah daerah, perguruan tinggi, dan lembaga
-            terkait. Program ini terbukti membantu mitigasi banjir, konservasi
-            air, serta mendukung keberlanjutan lingkungan.
-          </p>
-        </div>
+  className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 md:p-8 mb-6 shadow-lg"
+  data-aos="fade-up"
+>
+  <p className="text-gray-100 leading-relaxed text-justify text-xs sm:text-sm md:text-base">
+    <Typewriter
+      words={[
+        `Pipa Resapan Horizontal (PRH) merupakan teknologi sederhana yang berfungsi mengurangi limpasan air hujan sekaligus meningkatkan ketersediaan air tanah. PRH efektif diterapkan pada wilayah rawan banjir maupun kekeringan dengan cara meresapkan air permukaan ke dalam tanah. Hingga saat ini, telah dipasang ${data.totalUnit} unit PRH di berbagai lokasi strategis, khususnya di ${data.wilayah.join(", ")}, melalui dukungan pemerintah daerah, perguruan tinggi, dan lembaga terkait. Program ini terbukti membantu mitigasi banjir, konservasi air, serta mendukung keberlanjutan lingkungan. Dengan pengalaman lebih dari ${data.pengalaman} tahun, kami berkomitmen untuk terus mengembangkan dan memperluas implementasi PRH demi masa depan yang lebih hijau dan berkelanjutan.`,
+      ]}
+      cursorBlinking={true}
+      cursorStyle="|"
+      typeSpeed={10}
+      deleteSpeed={0}
+      delaySpeed={1000}
+    />
+  </p>
+</div>
 
         {/* Galeri Gambar */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 pt-4">
