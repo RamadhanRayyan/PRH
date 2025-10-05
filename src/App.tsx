@@ -135,8 +135,9 @@ const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 bg-gradient-to-br from-white-600 to-white-800 rounded-lg flex items-center justify-center">
-                <img src={logo} className="h-15 w-15 text-white" />
+                <a href="#beranda"><img src={logo} className="h-15 w-15 text-white" /></a>
               </div>
+              
               <div>
                 <h1 className="text-xl font-bold text-gray-800">
                   CV. Rekayasa Nusa Mandiri
@@ -326,7 +327,7 @@ const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null
                   className="w-full h-full object-cover"
                 />
                 {/* Tombol lihat detail */}
-                <div className="absolute bottom-3 left-0 right-0 flex justify-center">
+                <div className="absolute bottom-3 left-0 right-0 flex justify-center pb-6">
                   <button
                     onClick={() => setSelectedProduct(product)}
                     className="px-3 py-1 text-sm bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition"
@@ -343,7 +344,12 @@ const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null
       {/* Overlay Detail */}
       {selectedProduct && (
   <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 transition-opacity duration-300 animate-fadeIn">
-    <div className="bg-white rounded-2xl shadow-lg p-6 w-[90%] h-[90%] relative overflow-y-auto transform transition-all duration-300 scale-95 opacity-0 animate-slideUp">
+    <div className="bg-white rounded-2xl shadow-lg p-6 
+     w-full sm:w-[90%] md:w-[60%] lg:w-[40%] 
+     max-h-[80vh] 
+     relative overflow-y-auto 
+     transform transition-all duration-300 
+     scale-95 opacity-0 animate-slideUp mx-auto">
       <button
         onClick={() => setSelectedProduct(null)}
         className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
@@ -353,7 +359,7 @@ const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null
       <img
         src={selectedProduct.image}
         alt={selectedProduct.type}
-        className="w-full h-64 object-contain rounded-lg mb-4"
+        className="w-full max-h-64 object-contain rounded-lg mb-4w-full h-auto max-h-80 object-contain rounded-lg mb-4"
       />
       <h2 className="text-2xl font-bold mb-2">{selectedProduct.type}</h2>
       <p className="text-gray-600 mb-4">{selectedProduct.description}</p>
@@ -371,8 +377,6 @@ const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null
 
 
     </div>
-  );
-
           {/* Tambahan Sertifikat */}
           <div className="text-center mb-12">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
