@@ -23,6 +23,7 @@ import {
   ExternalLink,
   MessageCircle,
 } from "lucide-react";
+import { Typewriter } from "react-simple-typewriter";
 import imeg1 from "./assets/gambar prh 1.0.jpg";
 import imeg2 from "./assets/gambar prh 2.0.png";
 import imeg3 from "./assets/gambar prh 3.0.png";
@@ -250,16 +251,22 @@ const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null
       <section id="tentang-kami" className="pt-20 pb-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Tentang Kami
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              CV. Rekayasa Nusa Mandiri adalah perusahaan yang bergerak di
-              bidang inovasi teknologi lingkungan dan infrastruktur. Kami
-              berkomitmen menghadirkan solusi cerdas untuk konservasi air tanah,
-              pengendalian banjir, dan keberlanjutan lingkungan.
-            </p>
-          </div>
+  <h2 className="text-4xl font-bold text-gray-900 mb-4">
+    Tentang Kami
+  </h2>
+  <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+    <Typewriter
+      words={[
+        "CV. Rekayasa Nusa Mandiri adalah perusahaan yang bergerak di bidang inovasi teknologi lingkungan dan infrastruktur. Kami berkomitmen menghadirkan solusi cerdas untuk konservasi air tanah, pengendalian banjir, dan keberlanjutan lingkungan."
+      ]}
+      cursorBlinking={true}
+      cursorStyle="|"
+      typeSpeed={20}
+      deleteSpeed={0}
+      delaySpeed={1000}
+    />
+  </p>
+</div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-6">
             {/* isi tambahan kalau ada */}
@@ -790,7 +797,7 @@ const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-300 to-blue-400 rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-300 to-blue-500 rounded-lg flex items-center justify-center">
                   <img src="/logo.png" alt="logo" className="h-6 w-6 text-white" />
                 </div>
                 <div>
