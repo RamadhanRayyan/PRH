@@ -114,7 +114,7 @@ export default function ImplementasiPRH() {
       ]}
       cursorBlinking={true}
       cursorStyle="|"
-      typeSpeed={10}
+      typeSpeed={1.5}
       deleteSpeed={0}
       delaySpeed={1000}
     />
