@@ -518,7 +518,7 @@ const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null
               <img
                 src={galleryImages[currentSlide].gambar}
                 alt={galleryImages[currentSlide].title}
-                className={`w-full h-full rounded-xl brightness-50 ${
+                className={`w-full h-full rounded-xl brightness-75 ${
                   currentSlide === 4
                     ? "object-contain brightness-100"
                     : "object-cover brightness-50"
@@ -790,8 +790,8 @@ const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-                  <Droplets className="h-6 w-6 text-white" />
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-300 to-blue-400 rounded-lg flex items-center justify-center">
+                  <img src="/logo.png" alt="logo" className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold">
