@@ -299,88 +299,90 @@ const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null
           {/* Produk Cards */}
           {/* Produk Cards */}
     <div className="p-8">
-      {/* Grid Produk */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        {products.map((product, index) => (
-          <div key={index} className="group w-full h-80 [perspective:1000px]">
-            <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-              
-              {/* FRONT SIDE */}
-              <div className="absolute inset-0 bg-white rounded-2xl shadow-lg overflow-hidden [backface-visibility:hidden]">
-                <div className="bg-gradient-to-r from-blue-600 to-teal-600 p-6 text-white">
-                  <h3 className="text-2xl font-bold mb-2">{product.type}</h3>
-                  <p className="text-blue-100">ID: {product.id}</p>
-                </div>
-                <div className="p-6">
-                  <p className="text-gray-600">{product.description}</p>
-                </div>
-                <div className="pl-5">
-                  <ul className="space-y-2">
-                    {product.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-gray-700">
-                        <ChevronRight className="h-4 w-4 text-green-500 mr-2" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+  {/* Grid Produk */}
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+    {products.map((product, index) => (
+      <div key={index} className="group w-full h-80 [perspective:1000px]">
+        {/* Container Flip */}
+        <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
-              {/* BACK SIDE */}
-              <div className="absolute inset-0 rounded-2xl overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden]">
-                <img
-                  src={product.image}
-                  alt={product.type}
-                  className="w-full h-full object-cover"
-                />
-                {/* Tombol lihat detail */}
-                <div className="absolute bottom-3 left-0 right-0 flex justify-center pb-6">
-                  <button
-                    onClick={() => setSelectedProduct(product)}
-                    className="px-3 py-1 text-sm bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition"
-                  >
-                    Lihat Detail
-                  </button>
-                </div>
-              </div>
+          {/* FRONT SIDE */}
+          <div className="absolute inset-0 bg-white rounded-2xl shadow-lg overflow-hidden [backface-visibility:hidden] [transform:rotateY(0deg)]">
+            <div className="bg-gradient-to-r from-blue-600 to-teal-600 p-6 text-white">
+              <h3 className="text-2xl font-bold mb-2">{product.type}</h3>
+              <p className="text-blue-100">ID: {product.id}</p>
+            </div>
+            <div className="p-6">
+              <p className="text-gray-600">{product.description}</p>
+            </div>
+            <div className="pl-5">
+              <ul className="space-y-2">
+                {product.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-center text-gray-700">
+                    <ChevronRight className="h-4 w-4 text-green-500 mr-2" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-        ))}
-      </div>
 
+              {/* BACK SIDE */}
+              {/* BACK SIDE */}
+          <div className="absolute inset-0 rounded-2xl overflow-hidden bg-white [backface-visibility:hidden] [transform:rotateY(180deg)]">
+  <img
+    src={product.image}
+    alt={product.type}
+    className="w-full h-full object-cover"
+  />
+  <div className="absolute bottom-3 left-0 right-0 flex justify-center pb-6">
+    <button
+      onClick={() => setSelectedProduct(product)}
+      className="px-3 py-1 text-sm bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition"
+    >
+      Lihat Detail
+    </button>
+  </div>
+</div>
+
+        </div>
+      </div>
+    ))}
+  </div>
+  
       {/* Overlay Detail */}
       {selectedProduct && (
-  <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 transition-opacity duration-300 animate-fadeIn">
-    <div className="bg-white rounded-2xl shadow-lg p-6 
-     w-full sm:w-[90%] md:w-[60%] lg:w-[40%] 
-     max-h-[80vh] 
-     relative overflow-y-auto 
-     transform transition-all duration-300 
-     scale-95 opacity-0 animate-slideUp mx-auto">
-      <button
-        onClick={() => setSelectedProduct(null)}
-        className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
-      >
-        <X className="w-6 h-6" />
-      </button>
-      <img
-        src={selectedProduct.image}
-        alt={selectedProduct.type}
-        className="w-full max-h-64 object-contain rounded-lg mb-4w-full h-auto max-h-80 object-contain rounded-lg mb-4"
-      />
-      <h2 className="text-2xl font-bold mb-2">{selectedProduct.type}</h2>
-      <p className="text-gray-600 mb-4">{selectedProduct.description}</p>
-      <ul className="space-y-2">
-        {selectedProduct.features.map((f: string, i: number) => (
-          <li key={i} className="flex items-center text-gray-700">
-            <ChevronRight className="h-4 w-4 text-green-500 mr-2" />
-            {f}
-          </li>
-        ))}
-      </ul>
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 transition-opacity duration-300 animate-fadeIn">
+      <div className="bg-white rounded-2xl shadow-lg p-6 
+        w-full sm:w-[90%] md:w-[60%] lg:w-[40%] 
+        max-h-[80vh] 
+        relative overflow-y-auto 
+        transform transition-all duration-300 
+        scale-95 opacity-0 animate-slideUp mx-auto">
+        <button
+          onClick={() => setSelectedProduct(null)}
+          className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
+        >
+          <X className="w-6 h-6" />
+        </button>
+        <img
+          src={selectedProduct.image}
+          alt={selectedProduct.type}
+          className="w-full h-auto max-h-80 object-contain rounded-lg mb-4"
+        />
+        <h2 className="text-2xl font-bold mb-2">{selectedProduct.type}</h2>
+        <p className="text-gray-600 mb-4">{selectedProduct.description}</p>
+        <ul className="space-y-2">
+          {selectedProduct.features.map((f, i) => (
+            <li key={i} className="flex items-center text-gray-700">
+              <ChevronRight className="h-4 w-4 text-green-500 mr-2" />
+              {f}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
-  </div>
-)}
+  )}
 
 
     </div>
@@ -725,71 +727,74 @@ const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null
 
       {/* Kontak */}
       <section id="kontak" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Kontak Kami
-            </h2>
-            <p className="text-xl text-gray-600">
-              Hubungi Kami untuk Kerjasama & Pemesanan PRH
-            </p>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl font-bold text-gray-900 mb-4">Kontak Kami</h2>
+      <p className="text-xl text-gray-600">
+        Hubungi Kami untuk Kerjasama & Pemesanan PRH
+      </p>
+    </div>
+
+    <div className="gap-12">
+      <div className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl p-8">
+        <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center justify-center">
+          Informasi Perusahaan
+        </h3>
+
+        {/* responsif */}
+        <div className="flex flex-col md:flex-row items-stretch md:items-start justify-center gap-8">
+          {/* alamat */}
+          <div className="flex items-start space-x-4">
+            <div className="bg-blue-600 p-3 rounded-lg">
+              <MapPin className="h-6 w-6 text-white" />
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-1">Alamat Kantor</h4>
+              <p className="text-gray-600">
+                Jl.Bulusan Utara Raya Kec.Tembalang Kota Semarang
+                <br />
+                Jawa Tengah, Indonesia 50277
+              </p>
+            </div>
           </div>
 
-          <div className="gap-12">
-            <div className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center justify-center">
-                Informasi Perusahaan
-              </h3>
+          {/* telepon */}
+          <div className="flex items-start space-x-4">
+            <div className="bg-green-600 p-3 rounded-lg">
+              <Phone className="h-6 w-6 text-white" />
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-1">Telepon / WhatsApp</h4>
+              <p className="text-gray-600">+62 813 9029 4115</p>
+            </div>
+          </div>
 
-              {/* diubah jadi responsif */}
-              <div className="flex flex-col md:flex-row items-stretch md:items-start justify-center gap-8">
-                {/* alamat */}
-                <div className="flex items-start space-x-4">
-                  <div className="bg-blue-600 p-3 rounded-lg">
-                    <MapPin className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">
-                      Alamat Kantor
-                    </h4>
-                    <p className="text-gray-600">
-                      Jl.Bulusan Utara Raya Kec.Tembalang Kota Semarang
-                      <br />
-                      Jawa Tengah, Indonesia 50277
-                    </p>
-                  </div>
-                </div>
-
-                {/* telepon */}
-                <div className="flex items-start space-x-4">
-                  <div className="bg-green-600 p-3 rounded-lg">
-                    <Phone className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">
-                      Telepon / WhatsApp
-                    </h4>
-                    <p className="text-gray-600">+62 813 9029 4115</p>
-                  </div>
-                </div>
-
-                {/* email */}
-                <div className="flex items-start space-x-4">
-                  <div className="bg-purple-600 p-3 rounded-lg">
-                    <Mail className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-                    <p className="text-gray-600">
-                      rekayasanusamandiri@gmail.com
-                    </p>
-                  </div>
-                </div>
-              </div>
+          {/* email */}
+          <div className="flex items-start space-x-4">
+            <div className="bg-purple-600 p-3 rounded-lg">
+              <Mail className="h-6 w-6 text-white" />
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
+              <p className="text-gray-600">rekayasanusamandiri@gmail.com</p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+
+    {/* tombol download brosur */}
+    <div className="flex justify-center mt-10">
+      <a
+        href="/brosur.pdf"
+        download
+        className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
+      >
+        📄 Download Brosur
+      </a>
+    </div>
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
@@ -797,8 +802,8 @@ const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-300 to-blue-500 rounded-lg flex items-center justify-center">
-                  <img src="/logo.png" alt="logo" className="h-6 w-6 text-white" />
+                <div className="w-14 h-14 bg-white rounded-lg flex items-center justify-center">
+                  <img src="/logo.png" alt="logo" className="h-12 w-12 text-white" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold">
