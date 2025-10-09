@@ -86,7 +86,6 @@ const TimelinePRH = () => {
   const [isTouch, setIsTouch] = useState(false);
 
   useEffect(() => {
-    // Deteksi apakah device touchscreen
     const touchCheck = window.matchMedia("(pointer: coarse)").matches;
     setIsTouch(touchCheck);
   }, []);
@@ -98,7 +97,7 @@ const TimelinePRH = () => {
     const card = container.querySelector(".timeline-card");
     if (!card) return;
 
-    const cardWidth = (card as HTMLElement).offsetWidth + 16; // lebar + gap
+    const cardWidth = (card as HTMLElement).offsetWidth + 16;
     container.scrollBy({
       left: direction === "left" ? -cardWidth : cardWidth,
       behavior: "smooth",
@@ -112,34 +111,39 @@ const TimelinePRH = () => {
           Timeline Kegiatan PRH Kota Semarang
         </h2>
 
-        {/* Tombol navigasi (muncul hanya jika bukan touchscreen) */}
+        {/* Fade shadow kiri-kanan */}
+        <div className="absolute inset-y-0 left-0 w-12 sm:w-16 bg-gradient-to-r from-blue-100 via-blue-100/70 to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-y-0 right-0 w-12 sm:w-16 bg-gradient-to-l from-blue-100 via-blue-100/70 to-transparent pointer-events-none z-10" />
+
+        {/* Tombol panah (non-touch only) */}
         {!isTouch && (
           <>
             <button
               onClick={() => scrollByCard("left")}
-              className="absolute left-0 sm:-left-6 top-[55%] sm:top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 sm:p-3 rounded-full shadow-md hover:bg-blue-600 active:scale-95 z-20"
+              className="absolute left-3 sm:left-4 md:left-6 lg:left-10 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 sm:p-3 rounded-full shadow-md hover:bg-blue-600 active:scale-95 z-20 transition-all"
             >
               <ChevronLeft size={18} className="sm:size-6" />
             </button>
-
             <button
               onClick={() => scrollByCard("right")}
-              className="absolute right-0 sm:-right-6 top-[55%] sm:top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 sm:p-3 rounded-full shadow-md hover:bg-blue-600 active:scale-95 z-20"
+              className="absolute right-3 sm:right-4 md:right-6 lg:right-10 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 sm:p-3 rounded-full shadow-md hover:bg-blue-600 active:scale-95 z-20 transition-all"
             >
               <ChevronRight size={18} className="sm:size-6" />
             </button>
           </>
         )}
 
-        {/* Timeline horizontal */}
+        {/* Timeline scrollable */}
         <div
           ref={scrollRef}
-          className="flex gap-4 sm:gap-6 overflow-x-auto scroll-smooth px-2 sm:px-4 snap-x snap-mandatory scrollbar-hide"
+          className={`flex gap-4 sm:gap-6 overflow-x-auto scroll-smooth px-2 sm:px-4 snap-x snap-mandatory ${
+            isTouch ? "scrollbar-thin scrollbar-thumb-blue-400/40" : "scrollbar-hide"
+          }`}
         >
           {timelineData.map((item, index) => (
             <div
               key={index}
-              className="timeline-card min-w-[230px] sm:min-w-[300px] bg-white rounded-2xl shadow-md p-4 sm:p-6 border-t-4 border-blue-500 flex-shrink-0 snap-center"
+              className="timeline-card min-w-[230px] sm:min-w-[280px] lg:min-w-[300px] bg-white rounded-2xl shadow-md p-4 sm:p-6 border-t-4 border-blue-500 flex-shrink-0 snap-center hover:shadow-xl transition-all duration-300"
             >
               <p className="text-blue-500 font-semibold mb-1 text-sm sm:text-base">
                 {item.date}
