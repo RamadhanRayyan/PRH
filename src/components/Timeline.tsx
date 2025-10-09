@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const timelineData = [
@@ -83,58 +83,77 @@ const timelineData = [
 
 const TimelinePRH = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [isTouch, setIsTouch] = useState(false);
 
-  const scrollLeft = () => {
-    scrollRef.current?.scrollBy({ left: -400, behavior: "smooth" });
-  };
+  useEffect(() => {
+    // Deteksi apakah device touchscreen
+    const touchCheck = window.matchMedia("(pointer: coarse)").matches;
+    setIsTouch(touchCheck);
+  }, []);
 
-  const scrollRight = () => {
-    scrollRef.current?.scrollBy({ left: 400, behavior: "smooth" });
+  const scrollByCard = (direction: "left" | "right") => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const card = container.querySelector(".timeline-card");
+    if (!card) return;
+
+    const cardWidth = (card as HTMLElement).offsetWidth + 16; // lebar + gap
+    container.scrollBy({
+      left: direction === "left" ? -cardWidth : cardWidth,
+      behavior: "smooth",
+    });
   };
 
   return (
-    <section className="bg-gradient-to-b from-blue-100 to-white py-16 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-800">
+    <section className="bg-gradient-to-b from-blue-100 to-white py-12 sm:py-16 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
+        <h2 className="text-2xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 text-gray-800">
           Timeline Kegiatan PRH Kota Semarang
         </h2>
 
-        {/* Tombol navigasi */}
-        <button
-          onClick={scrollLeft}
-          className="absolute left-2 sm:left-10 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 sm:p-3 rounded-full shadow-lg hover:bg-blue-600 active:scale-95 z-10"
-        >
-          <ChevronLeft size={20} className="sm:size-6" />
-        </button>
+        {/* Tombol navigasi (muncul hanya jika bukan touchscreen) */}
+        {!isTouch && (
+          <>
+            <button
+              onClick={() => scrollByCard("left")}
+              className="absolute left-0 sm:-left-6 top-[55%] sm:top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 sm:p-3 rounded-full shadow-md hover:bg-blue-600 active:scale-95 z-20"
+            >
+              <ChevronLeft size={18} className="sm:size-6" />
+            </button>
 
-        <button
-          onClick={scrollRight}
-          className="absolute right-2 sm:right-10 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 sm:p-3 rounded-full shadow-lg hover:bg-blue-600 active:scale-95 z-10"
-        >
-          <ChevronRight size={20} className="sm:size-6" />
-        </button>
+            <button
+              onClick={() => scrollByCard("right")}
+              className="absolute right-0 sm:-right-6 top-[55%] sm:top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 sm:p-3 rounded-full shadow-md hover:bg-blue-600 active:scale-95 z-20"
+            >
+              <ChevronRight size={18} className="sm:size-6" />
+            </button>
+          </>
+        )}
 
         {/* Timeline horizontal */}
         <div
           ref={scrollRef}
-          className="flex gap-6 sm:gap-8 overflow-x-hidden scroll-smooth"
+          className="flex gap-4 sm:gap-6 overflow-x-auto scroll-smooth px-2 sm:px-4 snap-x snap-mandatory scrollbar-hide"
         >
           {timelineData.map((item, index) => (
             <div
               key={index}
-              className="min-w-[250px] sm:min-w-[300px] bg-white rounded-2xl shadow-md p-4 sm:p-6 border-t-4 border-blue-500 flex-shrink-0"
+              className="timeline-card min-w-[230px] sm:min-w-[300px] bg-white rounded-2xl shadow-md p-4 sm:p-6 border-t-4 border-blue-500 flex-shrink-0 snap-center"
             >
-              <p className="text-blue-500 font-semibold mb-1">{item.date}</p>
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
+              <p className="text-blue-500 font-semibold mb-1 text-sm sm:text-base">
+                {item.date}
+              </p>
+              <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 leading-snug">
                 {item.title}
               </h3>
-              <p className="text-gray-700 text-sm sm:text-base">
+              <p className="text-gray-700 text-xs sm:text-sm mb-1">
                 <span className="font-medium">Lokasi:</span> {item.location}
               </p>
-              <p className="text-gray-700 text-sm sm:text-base">
+              <p className="text-gray-700 text-xs sm:text-sm mb-1">
                 <span className="font-medium">Jumlah PRH:</span> {item.jumlah}
               </p>
-              <p className="text-gray-700 text-sm sm:text-base">
+              <p className="text-gray-700 text-xs sm:text-sm">
                 <span className="font-medium">Sumber Dana:</span> {item.sumber}
               </p>
             </div>
