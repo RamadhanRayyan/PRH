@@ -76,6 +76,14 @@ export const Footer = () => {
                     Galeri
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="#kontak"
+                    className="hover:text-white transition-colors"
+                  >
+                    Kontak
+                  </a>
+                </li>
               </ul>
             </div>
 
