@@ -93,7 +93,7 @@ const TimelinePRH = () => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-blue-100 to-white py-16 relative">
+    <section className="bg-gradient-to-b from-blue-100 to-white py-16 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-800">
           Timeline Kegiatan PRH Kota Semarang
@@ -102,16 +102,16 @@ const TimelinePRH = () => {
         {/* Tombol navigasi */}
         <button
           onClick={scrollLeft}
-          className="hidden sm:flex absolute left-4 sm:left-10 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 sm:p-3 rounded-full shadow-lg hover:bg-blue-600 z-10"
+          className="absolute left-2 sm:left-10 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 sm:p-3 rounded-full shadow-lg hover:bg-blue-600 active:scale-95 z-10"
         >
-          <ChevronLeft size={22} />
+          <ChevronLeft size={20} className="sm:size-6" />
         </button>
 
         <button
           onClick={scrollRight}
-          className="hidden sm:flex absolute right-4 sm:right-10 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 sm:p-3 rounded-full shadow-lg hover:bg-blue-600 z-10"
+          className="absolute right-2 sm:right-10 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 sm:p-3 rounded-full shadow-lg hover:bg-blue-600 active:scale-95 z-10"
         >
-          <ChevronRight size={22} />
+          <ChevronRight size={20} className="sm:size-6" />
         </button>
 
         {/* Timeline horizontal */}
@@ -122,7 +122,7 @@ const TimelinePRH = () => {
           {timelineData.map((item, index) => (
             <div
               key={index}
-              className="min-w-[85%] sm:min-w-[300px] md:min-w-[350px] lg:min-w-[400px] bg-white rounded-2xl shadow-md p-6 border-t-4 border-blue-500 flex-shrink-0"
+              className="min-w-[250px] sm:min-w-[300px] bg-white rounded-2xl shadow-md p-4 sm:p-6 border-t-4 border-blue-500 flex-shrink-0"
             >
               <p className="text-blue-500 font-semibold mb-1">{item.date}</p>
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
