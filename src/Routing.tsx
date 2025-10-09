@@ -1,18 +1,17 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 import App from "./App";
-import Implementation from "./Implementation";
+import Implementation from "./components/ImplementasiDetail";
+import ImplementasiSummary from "./ImplementasiSummary"; // ✅ tambahkan ini
 
 // ✅ ScrollToTop Component
 function ScrollToTop() {
   const { pathname } = useLocation();
-
   useEffect(() => {
-    window.scrollTo(0, 0); // Scroll ke paling atas saat route berubah
+    window.scrollTo(0, 0);
   }, [pathname]);
-
   return null;
 }
 
@@ -21,7 +20,7 @@ export const Routing = () => {
 
   return (
     <AnimatePresence mode="wait">
-      <ScrollToTop /> {/* ✅ Tambahkan di sini */}
+      <ScrollToTop />
       <Routes location={location} key={location.pathname}>
         <Route
           path="/"
@@ -31,6 +30,18 @@ export const Routing = () => {
             </PageWrapper>
           }
         />
+
+        {/* ✅ Halaman implementasi utama */}
+        <Route
+          path="/implementasi"
+          element={
+            <PageWrapper>
+              <ImplementasiSummary />
+            </PageWrapper>
+          }
+        />
+
+        {/* ✅ Halaman detail implementasi */}
         <Route
           path="/implementasi-detail"
           element={
@@ -45,12 +56,14 @@ export const Routing = () => {
 };
 
 // 🔥 Wrapper animasi untuk setiap page
-function PageWrapper({ children }: { children: React.ReactNode }) {
+import { ReactNode } from "react";
+
+function PageWrapper({ children }: { children: ReactNode }) {
   return (
     <motion.div
-      initial={{ opacity: 0, x: 50 }}   // posisi awal (geser dikit + transparan)
-      animate={{ opacity: 1, x: 0 }}    // posisi masuk
-      exit={{ opacity: 0, x: -50 }}     // posisi keluar
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -50 }}
       transition={{ duration: 0.4, ease: "easeInOut" }}
       className="min-h-screen"
     >

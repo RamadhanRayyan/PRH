@@ -158,7 +158,7 @@ export const Products = () => {const products = [
           </div>
           {/* Tambahan Sertifikat */}
           <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <h3 className="text-4xl font-bold text-gray-900 mb-4">
               Sertifikat Paten
             </h3>
             <p className="text-gray-600">

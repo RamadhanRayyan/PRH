@@ -5,6 +5,23 @@ import logo from "../assets/logo.png";
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const handleScroll = (id: string) => {
+    const section = document.querySelector(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false);
+    }
+  };
+
+  const menuItems = [
+    { name: "Beranda", id: "#beranda" },
+    { name: "Tentang Kami", id: "#tentang-kami" },
+    { name: "Produk", id: "#produk" },
+    { name: "Implementasi", id: "#implementasi" }, // ⬅️ diarahkan ke summary
+    { name: "Galeri", id: "#galeri" },
+    { name: "Kontak", id: "#kontak" },
+  ];
+
   return (
     <header className="bg-white shadow-lg fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,21 +45,14 @@ export const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {[
-              "Beranda",
-              "Tentang Kami",
-              "Produk",
-              "Implementasi",
-              "Galeri",
-              "Kontak",
-            ].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase().replace(" ", "-")}`}
+            {menuItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => handleScroll(item.id)}
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
               >
-                {item}
-              </a>
+                {item.name}
+              </button>
             ))}
 
             {/* Ikon Booklet */}
@@ -76,22 +86,14 @@ export const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t">
             <nav className="flex flex-col space-y-2">
-              {[
-                "Beranda",
-                "Tentang Kami",
-                "Produk",
-                "Implementasi",
-                "Galeri",
-                "Kontak",
-              ].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase().replace(" ", "-")}`}
-                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-4"
-                  onClick={() => setIsMenuOpen(false)}
+              {menuItems.map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => handleScroll(item.id)}
+                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-4 text-left"
                 >
-                  {item}
-                </a>
+                  {item.name}
+                </button>
               ))}
 
               {/* Tombol Booklet (Mobile) */}
