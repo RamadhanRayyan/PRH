@@ -15,6 +15,7 @@ import { Gallery } from "./components/Gallery";
 import { Socialmedia } from "./components/Socialmedia";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import TimelinePRH from "./components/Timeline";
 
 function App() {
 
@@ -79,7 +80,8 @@ function App() {
 
       {/* Testimoni */}
       <Testimoni/>
-
+      {/* Timeline */}
+      <TimelinePRH/>
       {/* Galeri */}
       <Gallery/>
       {/* Media Sosial & Publikasi */}
