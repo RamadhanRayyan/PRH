@@ -26,8 +26,7 @@ export const Navbar = () => {
     { name: "Beranda", id: "#beranda" },
     { name: "Tentang Kami", id: "#tentang-kami" },
     { name: "Produk", id: "#produk" },
-    { name: "Implementasi", id: "#implementasi" },
-    { name: "Galeri", id: "#galeri" },
+    { name: "Proyek", id: "#proyek" },
     { name: "Kontak", id: "#kontak" },
   ];
 

@@ -35,7 +35,7 @@ export const Hero = () => {
             <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
               {/* Tombol Booklet */}
               <a
-                href="/booklet.pdf" // ganti path sesuai lokasi file kamu
+                href="/Booklet.pdf" // ganti path sesuai lokasi file kamu
                 download
                 className="flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition duration-300"
               >

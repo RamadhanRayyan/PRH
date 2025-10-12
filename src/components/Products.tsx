@@ -1,5 +1,5 @@
 import {  useState } from "react";
-import { ChevronRight, Award, TrendingUp } from 'lucide-react';
+import { ChevronRight, } from 'lucide-react';
 import patenT from "../assets/paten T.png";
 import patenR from "../assets/paten R.png";
 import patenL from "../assets/paten L.png";
@@ -44,7 +44,7 @@ export const Products = () => {const products = [
     (typeof products)[0] | null
   >(null);
   return (
-    <section id="produk" className="py-20 bg-gray-50">
+    <section id="produk" className="py-20 bg-gray-50 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -137,55 +137,6 @@ export const Products = () => {const products = [
               alt="Sertifikat Paten PRH Tipe L"
               className="rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
             />
-          </div>
-
-          {/* Manfaat & Keunggulan */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-16">
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <Award className="h-8 w-8 text-green-600 mr-3" />
-                Manfaat PRH
-              </h3>
-              <ul className="space-y-4">
-                {[
-                  "Mengatasi banjir & genangan air",
-                  "Menambah ketersediaan air tanah",
-                  "Mengurangi intrusi air laut",
-                  "Menjaga keseimbangan ekosistem",
-                ].map((benefit, index) => (
-                  <li
-                    key={index}
-                    className="flex items-center text-lg text-gray-700"
-                  >
-                    <div className="w-2 h-2 bg-green-500 rounded-full mr-4"></div>
-                    <span>{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <TrendingUp className="h-8 w-8 text-blue-600 mr-3" />
-                Keunggulan PRH
-              </h3>
-              <ul className="space-y-4">
-                {[
-                  "Harga lebih murah dibanding alternatif lain",
-                  "Pembuatan & perawatan mudah",
-                  "Tidak membutuhkan lahan luas",
-                  "Tetap efektif walau muka air tanah dangkal",
-                ].map((advantage, index) => (
-                  <li
-                    key={index}
-                    className="flex items-center text-lg text-gray-700"
-                  >
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-4"></div>
-                    <span>{advantage}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </div>
       </section>

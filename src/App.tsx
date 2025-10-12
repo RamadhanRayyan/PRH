@@ -5,33 +5,34 @@ import { Hero } from "./components/Hero";
 import { About } from "./components/About";
 import { Products } from "./components/Products";
 import { Testimoni } from "./components/Testimoni";
-import { Gallery } from "./components/Gallery";
 import { Socialmedia } from "./components/Socialmedia";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
-import ImplementasiSummary from "./ImplementasiSummary";
+import ImplementasiSummary from "./ProyekDepan";
+import Publications, { publicationsData } from "./components/Publications"; // ✅ import data
 
 function App() {
   const location = useLocation();
 
-  // 💡 Tambahkan efek ini untuk auto-scroll dari Navbar
+  // 💡 Auto-scroll dari Navbar
   useEffect(() => {
-  if (location.state?.scrollTo) {
-    setTimeout(() => {
-      const section = document.querySelector(`#${location.state.scrollTo}`);
-      if (section) {
-        const offset = 10; // 👉 tinggi navbar kamu (px)
-        const elementPosition = section.getBoundingClientRect().top + window.pageYOffset;
-        const offsetPosition = elementPosition - offset;
+    if (location.state?.scrollTo) {
+      setTimeout(() => {
+        const section = document.querySelector(`#${location.state.scrollTo}`);
+        if (section) {
+          const offset = 120; // tinggi navbar (px)
+          const elementPosition =
+            section.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - offset;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
-      }
-    }, 300);
-  }
-}, [location]);
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
+      }, 300);
+    }
+  }, [location]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -41,7 +42,7 @@ function App() {
       <Products />
       <ImplementasiSummary />
       <Testimoni />
-      <Gallery />
+      <Publications data={publicationsData} /> {/* ✅ gunakan data */}
       <Socialmedia />
       <Contact />
       <Footer />

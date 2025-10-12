@@ -3,8 +3,8 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 import App from "./App";
-import Implementation from "./components/ImplementasiDetail";
-import ImplementasiSummary from "./ImplementasiSummary";
+import Implementation from "./components/ProyekBelakang";
+import ImplementasiSummary from "./ProyekDepan";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
