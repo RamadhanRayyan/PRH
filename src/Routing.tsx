@@ -1,18 +1,44 @@
-import { useEffect } from "react";
+import { useEffect, ReactNode } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 import App from "./App";
 import Implementation from "./components/ImplementasiDetail";
-import ImplementasiSummary from "./ImplementasiSummary"; // ✅ tambahkan ini
+import ImplementasiSummary from "./ImplementasiSummary";
 
-// ✅ ScrollToTop Component
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  useEffect(() => {
+    if (hash) {
+      const section = document.querySelector(hash);
+      if (section) {
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      }
+    }
+  }, [hash]);
+
   return null;
+}
+
+function PageWrapper({ children }: { children: ReactNode }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -50 }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
+      className="min-h-screen"
+    >
+      {children}
+    </motion.div>
+  );
 }
 
 export const Routing = () => {
@@ -30,8 +56,6 @@ export const Routing = () => {
             </PageWrapper>
           }
         />
-
-        {/* ✅ Halaman implementasi utama */}
         <Route
           path="/implementasi"
           element={
@@ -40,8 +64,6 @@ export const Routing = () => {
             </PageWrapper>
           }
         />
-
-        {/* ✅ Halaman detail implementasi */}
         <Route
           path="/implementasi-detail"
           element={
@@ -54,20 +76,3 @@ export const Routing = () => {
     </AnimatePresence>
   );
 };
-
-// 🔥 Wrapper animasi untuk setiap page
-import { ReactNode } from "react";
-
-function PageWrapper({ children }: { children: ReactNode }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: 50 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -50 }}
-      transition={{ duration: 0.4, ease: "easeInOut" }}
-      className="min-h-screen"
-    >
-      {children}
-    </motion.div>
-  );
-}

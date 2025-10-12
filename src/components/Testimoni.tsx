@@ -53,7 +53,7 @@ export const Testimoni = () => {
   return (
     <section id="testimoni" className="py-10 bg-white relative overflow-hidden">
       <div className="max-w-2xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-extrabold text-gray-900 mb-4">Testimoni</h2>
+        <h2 className="text-4xl font-bold text-gray-900 mb-4">Testimoni</h2>
         <p className="text-gray-600 text-xl mb-8">
           Apa kata mereka tentang NUSA Boarding School
         </p>

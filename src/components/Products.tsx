@@ -1,5 +1,5 @@
 import {  useState } from "react";
-import { ChevronRight, X, Award, TrendingUp } from 'lucide-react';
+import { ChevronRight, Award, TrendingUp } from 'lucide-react';
 import patenT from "../assets/paten T.png";
 import patenR from "../assets/paten R.png";
 import patenL from "../assets/paten L.png";
@@ -40,7 +40,7 @@ export const Products = () => {const products = [
     },
   ];
 
-  const [selectedProduct, setSelectedProduct] = useState<
+  const [] = useState<
     (typeof products)[0] | null
   >(null);
   return (
@@ -103,58 +103,12 @@ export const Products = () => {const products = [
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute bottom-3 left-0 right-0 flex justify-center pb-6">
-                        <button
-                          onClick={() => setSelectedProduct(product)}
-                          className="px-3 py-1 text-sm bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition"
-                        >
-                          Lihat Detail
-                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-
-            {/* Overlay Detail */}
-            {selectedProduct && (
-              <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 transition-opacity duration-300 animate-fadeIn">
-                <div
-                  className="bg-white rounded-2xl shadow-lg p-6 
-        w-full sm:w-[90%] md:w-[60%] lg:w-[40%] 
-        max-h-[80vh] 
-        relative overflow-y-auto 
-        transform transition-all duration-300 
-        scale-95 opacity-0 animate-slideUp mx-auto"
-                >
-                  <button
-                    onClick={() => setSelectedProduct(null)}
-                    className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
-                  >
-                    <X className="w-6 h-6" />
-                  </button>
-                  <img
-                    src={selectedProduct.image}
-                    alt={selectedProduct.type}
-                    className="w-full h-auto max-h-80 object-contain rounded-lg mb-4"
-                  />
-                  <h2 className="text-2xl font-bold mb-2">
-                    {selectedProduct.type}
-                  </h2>
-                  <p className="text-gray-600 mb-4">
-                    {selectedProduct.description}
-                  </p>
-                  <ul className="space-y-2">
-                    {selectedProduct.features.map((f, i) => (
-                      <li key={i} className="flex items-center text-gray-700">
-                        <ChevronRight className="h-4 w-4 text-green-500 mr-2" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )}
           </div>
           {/* Tambahan Sertifikat */}
           <div className="text-center mb-12">

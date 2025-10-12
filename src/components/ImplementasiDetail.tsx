@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { MapPin, Building, Calendar, ArrowLeft } from "lucide-react";
+import { MapPin, Building, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
+import { Navbar } from "./Navbar";
+import { Footer } from "./Footer";
 
 import img1 from "../assets/gambar prh 1.0.jpg";
 import img2 from "../assets/gambar prh 2.0.png";
@@ -126,23 +128,18 @@ export default function ImplementasiDetail() {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-gradient-to-br from-blue-500/40 via-blue-100/60 to-white py-20 min-h-screen backdrop-blur-sm">
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Header */}
+    <div className="bg-gradient-to-br from-blue-500/40 via-blue-100/60 to-white min-h-screen">
+      {/* ✅ Navbar muncul di semua halaman */}
+      <Navbar />
+
+      {/* Konten utama */}
+      <section className="pt-28 pb-20 max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between mb-10">
           <h2 className="text-3xl font-bold text-gray-900">
             Implementasi PRH — Detail
           </h2>
-          <button
-            onClick={() => navigate("/")}
-            className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl transition-all shadow-md"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Kembali
-          </button>
         </div>
 
-        {/* Timeline */}
         <div className="relative border-l-4 border-blue-500 pl-6 space-y-12">
           {dataPRH.map((item, i) => (
             <motion.div
@@ -153,10 +150,7 @@ export default function ImplementasiDetail() {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               viewport={{ once: true, amount: 0.2 }}
             >
-              {/* Timeline Dot */}
               <div className="absolute -left-[29px] top-2 w-4 h-4 bg-blue-500 rounded-full border-4 border-white shadow" />
-
-              {/* Text */}
               <div className="flex-1">
                 <div className="text-blue-600 text-sm font-semibold">
                   {item.tanggal}
@@ -182,8 +176,6 @@ export default function ImplementasiDetail() {
                   </span>
                 </div>
               </div>
-
-              {/* Gambar */}
               <motion.div
                 className="md:w-64 flex-shrink-0"
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -200,7 +192,10 @@ export default function ImplementasiDetail() {
             </motion.div>
           ))}
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* ✅ Footer juga tampil */}
+      <Footer />
+    </div>
   );
 }

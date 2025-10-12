@@ -5,7 +5,7 @@ export default function ImplementasiSummary() {
   return (
     <section
       id="implementasi"
-      className="bg-gradient-to-b from-gray-100 to-gray-100 py-20 min-h-screen"
+      className="bg-gradient-to-b from-gray-50 to-gray-50 pt-10 min-h-screen"
     >
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-3">
