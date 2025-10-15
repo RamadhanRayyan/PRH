@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
-import { About } from "./components/About";
 import { Products } from "./components/Products";
 import { Testimoni } from "./components/Testimoni";
 import { Socialmedia } from "./components/Socialmedia";
