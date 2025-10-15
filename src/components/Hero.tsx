@@ -17,10 +17,12 @@ export const Hero = () => {
           {/* Left text */}
           <div>
             <h1
-              className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+              className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
               style={{ textShadow: "2px 2px 8px rgba(0,0,0,0.7)" }}
             >
-              Inovasi Efektif Konservasi Air Tanah dan Cegah Banjir
+              Solusi Inovatif untuk
+              <span className="text-blue-500"> Konservasi Air Tanah</span> dan
+              <span className="text-blue-500"> Penanggulangan Banjir</span>
             </h1>
 
             <p className="text-lg lg:text-xl text-gray-100 mb-8 leading-relaxed">
