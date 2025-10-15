@@ -10,6 +10,7 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import ImplementasiSummary from "./ProyekDepan";
 import Publications, { publicationsData } from "./components/Publications"; // ✅ import data
+import WhyChooseUs from "./components/Reason";
 
 function App() {
   const location = useLocation();
@@ -38,6 +39,7 @@ function App() {
     <div className="min-h-screen bg-white">
       <Navbar />
       <Hero />
+      <WhyChooseUs />
       <About />
       <Products />
       <ImplementasiSummary />

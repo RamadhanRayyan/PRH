@@ -35,9 +35,12 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-3">
-            <button onClick={() => navigate("/")} className="flex items-center space-x-3">
+            <button
+              onClick={() => navigate("/")}
+              className="flex items-center space-x-3"
+            >
               <img src={logo} className="h-10 w-10" alt="Logo" />
-              <div>
+              <div className="text-start">
                 <h1 className="text-xl font-bold text-gray-800">
                   CV. Rekayasa Nusa Mandiri
                 </h1>
@@ -64,7 +67,11 @@ export const Navbar = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100"
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
         </div>
 

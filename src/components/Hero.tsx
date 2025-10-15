@@ -1,4 +1,4 @@
-import hero from '../assets/hero.png'
+import hero from "../assets/hero.png";
 import { BookOpen, Phone } from "lucide-react";
 
 export const Hero = () => {
@@ -12,23 +12,20 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-black/35"></div>
 
       {/* content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:pl-12">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:pl-1">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left text */}
           <div>
             <h1
-              className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
+              className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight"
               style={{ textShadow: "2px 2px 8px rgba(0,0,0,0.7)" }}
             >
-              Solusi Inovatif untuk
-              <span className="text-blue-500"> Konservasi Air Tanah</span> dan
-              <span className="text-blue-500"> Penanggulangan Banjir</span>
+              Inovasi Efektif Konservasi Air Tanah dan Cegah Banjir
             </h1>
 
             <p className="text-lg lg:text-xl text-gray-100 mb-8 leading-relaxed">
-              CV. Rekayasa Nusa Mandiri mempersembahkan Pipa Resapan
-              Horizontal (PRH) sebagai teknologi tepat guna untuk masa depan
-              lingkungan berkelanjutan.
+              Pipa Resapan Horizontal (PRH) sebagai teknologi tepat guna untuk
+              masa depan lingkungan berkelanjutan.
             </p>
 
             {/* tombol CTA */}
