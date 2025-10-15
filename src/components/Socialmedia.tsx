@@ -3,8 +3,6 @@ import {
   Users,
   Instagram,
   Youtube,
-  ExternalLink,
-
 } from "lucide-react";
 
 export const Socialmedia = () => {

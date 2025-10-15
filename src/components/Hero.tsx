@@ -43,13 +43,13 @@ export const Hero = () => {
 
             {/* Tombol WhatsApp */}
             <a
-              href="https://wa.me/+6281227277133" // ganti nomor WA
+              href="https://wa.me/6281227277133?text=Halo%20min%2C%20saya%20tertarik%20dengan%20produk%20*Pipa%20Resapan%20Horizontal%20(PRH)*.%0ABoleh%20saya%20tahu%20lebih%20detail?%20Terima%20kasih%20" // ganti nomor WA
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center px-6 py-3 bg-green-500 text-white font-semibold rounded-full shadow-lg hover:bg-green-600 transition duration-300"
             >
               <Phone className="w-5 h-5 mr-2" />
-              Hubungi Sekarang
+              Chat Sekarang
             </a>
           </div>
         </div>

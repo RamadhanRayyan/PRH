@@ -72,13 +72,13 @@ export const Contact = () => {
           </div>
 
           {/* Tombol WhatsApp Floating dengan efek gelombang forever */}
-          <div className="fixed bottom-6 right-6 z-50">
-            <a
-              href="https://wa.me/+6281227277133"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative flex items-center justify-center w-16 h-16 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 overflow-visible"
-            >
+<div className="fixed bottom-6 right-6 z-50">
+  <a
+    href="https://wa.me/6281227277133?text=Halo%20min%2C%20saya%20tertarik%20dengan%20produk%20*Pipa%20Resapan%20Horizontal%20(PRH)*.%0ABoleh%20saya%20tahu%20lebih%20detail?%20Terima%20kasih%20"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="relative flex items-center justify-center w-16 h-16 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 overflow-visible"
+  >
               {/* WhatsApp Icon */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
