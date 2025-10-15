@@ -106,11 +106,11 @@ export const Products = () => {
         <div className="mt-12 text-center">
           <div className="bg-white rounded-2xl shadow-lg p-8 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              E-Catalogue Resmi PRH
+              Temukan Produk PRH di E-Katalog
             </h3>
             <p className="text-gray-600 mb-6">
-              Jelajahi Koleksi Produk Lengkap Kami di Platform Pemerintah,
-              Pastikan Pilihan Anda Tepat & Terpercaya!
+              Jelajahi produk terbaik kami di E-Katalog Resmi PRH.
+              Klik sekarang dan temukan solusi terbaik untuk kebutuhan Anda!
             </p>
             <a
               href="https://katalog.inaproc.id/rekayasa-nusa-mandiri/"
@@ -119,7 +119,7 @@ export const Products = () => {
               className="inline-flex items-center bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
             >
               <ExternalLink className="mr-2 h-5 w-5" />
-              Lihat E-Catalogue
+              Lihat E-Katalog
             </a>
           </div>
         </div>
