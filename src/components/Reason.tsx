@@ -1,35 +1,40 @@
-import { motion } from "framer-motion";
+import {
+  Wallet,
+  Wrench,
+  Home,
+  Droplets,
+  CloudRain,
+  PlusCircle,
+} from "lucide-react";
 
 const reasons = [
   {
-    icon: "💰",
+    icon: Wallet,
     title: "Harga Terjangkau",
     desc: "Harga lebih murah dibanding alternatif lain.",
   },
   {
-    icon: "🛠️",
+    icon: Wrench,
     title: "Mudah Dibuat & Dirawat",
     desc: "Pembuatan & perawatan mudah tanpa peralatan khusus.",
   },
   {
-    icon: "🏡",
+    icon: Home,
     title: "Hemat Lahan",
     desc: "Tidak membutuhkan lahan luas untuk pemasangan.",
   },
   {
-    icon: "💧",
+    icon: Droplets,
     title: "Efektif Walau Air Dangkal",
     desc: "Tetap bekerja efektif walau muka air tanah dangkal.",
   },
-
-  // Manfaat
   {
-    icon: "🌊",
+    icon: CloudRain,
     title: "Atasi Banjir & Genangan",
     desc: "Mengatasi banjir dan genangan air di area rumah maupun perkotaan.",
   },
   {
-    icon: "💦",
+    icon: PlusCircle,
     title: "Tambah Ketersediaan Air",
     desc: "Menambah cadangan air tanah untuk kebutuhan jangka panjang.",
   },
@@ -39,44 +44,34 @@ export default function WhyChooseUs() {
   return (
     <section className="py-16 bg-gray-50" id="why-choose-us">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-gray-800 mb-4"
-        >
+        <h2 className="text-4xl font-bold text-gray-800 mb-4">
           Mengapa Harus Memilih Kami?
-        </motion.h2>
+        </h2>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-gray-600 max-w-2xl mx-auto mb-10 text-xl"
-        >
+        <p className="text-gray-600 max-w-2xl mx-auto mb-10 text-xl">
           Kami menghadirkan solusi pengelolaan air tanah yang modern melalui{" "}
           <span className="font-bold text-blue-600">
             Pipa Resapan Horizontal
           </span>{" "}
           — sistem inovatif yang efisien, hemat lahan, dan ramah lingkungan.
-        </motion.p>
+        </p>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {reasons.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition"
-            >
-              <div className="text-blue-500 text-4xl mb-3">{item.icon}</div>
-              <h3 className="font-semibold text-lg mb-2 text-gray-800">
-                {item.title}
-              </h3>
-              <p className="text-gray-600 text-sm">{item.desc}</p>
-            </motion.div>
-          ))}
+          {reasons.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={index}
+                className="bg-white shadow-md rounded-2xl p-6 hover:shadow-xl transition"
+              >
+                <Icon className="text-blue-500 w-10 h-10 mb-3 mx-auto" />
+                <h3 className="font-semibold text-lg mb-2 text-gray-800">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
