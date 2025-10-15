@@ -45,7 +45,7 @@ export default function WhyChooseUs() {
     <section className="py-16 bg-gray-50" id="why-choose-us">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-4xl font-bold text-gray-800 mb-4">
-          Mengapa Harus Memilih Kami?
+          Mengapa Harus Menggunakan PRH?
         </h2>
 
         <p className="text-gray-600 max-w-2xl mx-auto mb-10 text-xl">
