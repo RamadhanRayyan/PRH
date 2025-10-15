@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Building, Award, MapPin, Calendar } from "lucide-react";
-import { ImplementasiProses } from "./components/ImplementasiProses";
+import { ImplementasiProses } from "./ImplementasiProses";
 
 export default function ImplementasiSummary() {
   return (

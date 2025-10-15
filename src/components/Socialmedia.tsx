@@ -61,27 +61,6 @@ export const Socialmedia = () => {
               </a>
             ))}
           </div>
-
-          <div className="mt-12 text-center">
-            <div className="bg-white rounded-2xl shadow-lg p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                E-Catalogue Resmi
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Akses katalog lengkap produk PRH kami di platform resmi
-                pemerintah
-              </p>
-              <a
-                href="https://katalog.inaproc.id/rekayasa-nusa-mandiri/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
-              >
-                <ExternalLink className="mr-2 h-5 w-5" />
-                Lihat E-Catalogue
-              </a>
-            </div>
-          </div>
         </div>
       </section>
   )

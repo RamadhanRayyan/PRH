@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Award, TrendingUp } from "lucide-react";
 
 const reasons = [
   {

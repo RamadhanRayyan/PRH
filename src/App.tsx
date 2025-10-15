@@ -8,7 +8,7 @@ import { Testimoni } from "./components/Testimoni";
 import { Socialmedia } from "./components/Socialmedia";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
-import ImplementasiSummary from "./ProyekDepan";
+import ImplementasiSummary from "./components/ProyekDepan";
 import Publications, { publicationsData } from "./components/Publications"; // ✅ import data
 import WhyChooseUs from "./components/Reason";
 
@@ -40,7 +40,6 @@ function App() {
       <Navbar />
       <Hero />
       <WhyChooseUs />
-      <About />
       <Products />
       <ImplementasiSummary />
       <Testimoni />

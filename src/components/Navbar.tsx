@@ -9,14 +9,19 @@ export const Navbar = () => {
   const location = useLocation();
 
   const handleNavigation = (id: string) => {
-    if (location.pathname !== "/") {
-      // kalau bukan di halaman utama → pindah ke "/" sambil bawa info section
-      navigate("/", { state: { scrollTo: id.replace("#", "") } });
+    if (id === "#tentangkami") {
+      // khusus Tentang Kami → pindah ke halaman /about
+      navigate("/about");
     } else {
-      // kalau sudah di halaman utama → langsung scroll
-      const section = document.querySelector(id);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
+      if (location.pathname !== "/") {
+        // kalau bukan di halaman utama → pindah ke "/" sambil bawa info section
+        navigate("/", { state: { scrollTo: id.replace("#", "") } });
+      } else {
+        // kalau sudah di halaman utama → langsung scroll
+        const section = document.querySelector(id);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
       }
     }
     setIsMenuOpen(false);
@@ -24,7 +29,7 @@ export const Navbar = () => {
 
   const menuItems = [
     { name: "Beranda", id: "#beranda" },
-    { name: "Tentang Kami", id: "#tentang-kami" },
+    { name: "Tentang Kami", id: "#tentangkami" },
     { name: "Produk", id: "#produk" },
     { name: "Proyek", id: "#proyek" },
     { name: "Kontak", id: "#kontak" },

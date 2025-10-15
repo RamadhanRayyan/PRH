@@ -1,7 +1,7 @@
 import { MapPin, Building, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
-import { Navbar } from "./Navbar";
-import { Footer } from "./Footer";
+import { Navbar } from "../components/Navbar";
+import { Footer } from "../components/Footer";
 
 import img1 from "../assets/gambar prh 1.0.jpg";
 import img2 from "../assets/gambar prh 2.0.png";

@@ -3,8 +3,9 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 import App from "./App";
-import Implementation from "./components/ProyekBelakang";
-import ImplementasiSummary from "./ProyekDepan";
+import Implementation from "./pages/ProyekBelakang";
+import ImplementasiSummary from "./components/ProyekDepan";
+import { About } from "./components/About";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -69,6 +70,14 @@ export const Routing = () => {
           element={
             <PageWrapper>
               <Implementation />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <PageWrapper>
+              <About />
             </PageWrapper>
           }
         />

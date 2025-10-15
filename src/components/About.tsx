@@ -1,10 +1,16 @@
-import { Typewriter } from 'react-simple-typewriter';
-import tentangkami from '../assets/fotobareng.png';
-
+import { Typewriter } from "react-simple-typewriter";
+import tentangkami from "../assets/fotobareng.png";
+import { Navbar } from "./Navbar";
+import { Footer } from "./Footer";
+import patenT from "../assets/paten T.png";
+import patenR from "../assets/paten R.png";
+import patenL from "../assets/paten L.png";
 
 export const About = () => {
   return (
-    <section id="tentang-kami" className="pt-20 pb-10 bg-gray-50">
+    <>
+      <Navbar />
+      <section id="tentang-kami" className="pt-36 pb-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -17,7 +23,7 @@ export const About = () => {
                 ]}
                 cursorBlinking={true}
                 cursorStyle="|"
-                typeSpeed={20}
+                typeSpeed={8}
                 deleteSpeed={0}
                 delaySpeed={1000}
               />
@@ -38,5 +44,36 @@ export const About = () => {
           </div>
         </div>
       </section>
-  )
-}
+      <div className="p-14">
+        {/* Tambahan Sertifikat */}
+        <div className="text-center mb-12">
+          <h3 className="text-4xl font-bold text-gray-900 mb-4">
+            Sertifikat Paten
+          </h3>
+          <p className="text-gray-600">
+            Inovasi PRH sudah mendapatkan perlindungan hukum melalui paten
+            sederhana.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <img
+            src={patenT}
+            alt="Sertifikat Paten PRH Tipe T"
+            className="rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+          />
+          <img
+            src={patenR}
+            alt="Sertifikat Paten PRH Radial"
+            className="rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+          />
+          <img
+            src={patenL}
+            alt="Sertifikat Paten PRH Tipe L"
+            className="rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
+};
