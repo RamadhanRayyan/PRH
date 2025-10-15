@@ -74,7 +74,7 @@ export const Contact = () => {
           {/* Tombol WhatsApp Floating dengan efek gelombang forever */}
           <div className="fixed bottom-6 right-6 z-50">
             <a
-              href="https://wa.me/+6281390294115"
+              href="https://wa.me/+6281227277133"
               target="_blank"
               rel="noopener noreferrer"
               className="relative flex items-center justify-center w-16 h-16 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 overflow-visible"
