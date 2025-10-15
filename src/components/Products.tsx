@@ -103,7 +103,7 @@ export const Products = () => {
             ))}
           </div>
         </div>
-        <div className="mt-12 text-center">
+        <div className="mt-10 text-center">
           <div className="bg-white rounded-2xl shadow-lg p-8 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Temukan Produk PRH di E-Katalog
