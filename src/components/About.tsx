@@ -5,13 +5,28 @@ import { Footer } from "./Footer";
 import patenT from "../assets/paten T.png";
 import patenR from "../assets/paten R.png";
 import patenL from "../assets/paten L.png";
+import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 export const About = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <Navbar />
+
       <section id="tentang-kami" className="pt-36 pb-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Tombol Kembali */}
+          <button
+            onClick={() => navigate(-1)}
+            className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors mb-8 font-medium"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            Kembali
+          </button>
+
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Tentang Kami
@@ -31,7 +46,7 @@ export const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-6">
-            {/* isi tambahan kalau ada */}
+            {/* Isi tambahan kalau ada */}
           </div>
 
           {/* Foto lebih rapet atas-bawah */}
@@ -44,6 +59,7 @@ export const About = () => {
           </div>
         </div>
       </section>
+
       <div className="p-14">
         {/* Tambahan Sertifikat */}
         <div className="text-center mb-12">
@@ -73,6 +89,7 @@ export const About = () => {
           />
         </div>
       </div>
+
       <Footer />
     </>
   );
