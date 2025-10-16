@@ -51,7 +51,7 @@ export const Testimoni = () => {
   const item = testimonials[currentIndex];
 
   return (
-    <section id="testimoni" className="py-10 bg-white relative overflow-hidden">
+    <section id="testimoni" className="py-10 bg-gray-50 relative overflow-hidden">
       <div className="max-w-2xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-gray-900 mb-4">Testimoni</h2>
         <p className="text-gray-600 text-xl mb-8">

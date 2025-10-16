@@ -41,7 +41,6 @@ function App() {
       <Products />
       <ImplementasiSummary />
       <Testimoni />
-      <Socialmedia />
       <Contact />
       <Footer />
     </div>

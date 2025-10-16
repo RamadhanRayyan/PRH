@@ -23,7 +23,7 @@ export const Footer = () => {
           {/* Logo dan Deskripsi */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-14 h-14 bg-white rounded-lg flex items-center justify-center">
+              <div className="w-14 h-14 bg-gray-50 rounded-lg flex items-center justify-center">
                 <img
                   src="/logo.png"
                   alt="logo"
