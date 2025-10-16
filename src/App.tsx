@@ -4,7 +4,6 @@ import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Products } from "./components/Products";
 import { Testimoni } from "./components/Testimoni";
-import { Socialmedia } from "./components/Socialmedia";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import ImplementasiSummary from "./components/ProyekDepan";

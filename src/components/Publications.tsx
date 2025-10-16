@@ -5,45 +5,35 @@ import { ArrowLeft } from "lucide-react";
 
 export const publicationsData = [
   {
-    year: 2025,
+    year: 2020,
     items: [
       {
-        venue: "arXiv",
-        title: "AI-Assisted Multi-Agent Dialogue System",
-        authors: "Onno P Kampman, Ye Sheng Phang, Stanley Han, et al.",
-        link: "https://arxiv.org/abs/2411.18429",
-      },
-      {
-        venue: "EMNLP",
-        title:
-          "Academics Can Contribute to Domain-Specialized Language Models",
-        authors: "Mark Dredze, Genta Winata, Prabhanjan Kambadur, et al.",
-        link: "https://example.com/emnlp2025.pdf",
+        venue: "FDGBI",
+        title: "Analisa Kebutuhan Pipa Resapan Horisontal Akibat Perubahan Tataguna Lahan",
+        authors: "-",
+        link: "-",
       },
     ],
   },
   {
-    year: 2024,
+    year: 2019,
     items: [
       {
-        venue: "arXiv",
-        title: "Re-Evaluating Evaluation for Multilingual Summarization",
-        authors: "Jessica Forde, Ruochen Zhang, Lintang Sutawika, et al.",
-        link: "https://arxiv.org/abs/2410.12345",
+        venue: "TSUS",
+        title: "Kinerja Pipa Resapan Sebagai Pendukung Konservasi Air",
+        authors: "Edy Susilo, Diah Setyati Setyati Budiningrum.",
+        link: "https://journals.usm.ac.id/index.php/teknika/article/view/1806 ",
       },
+    ],
+  },
+  {
+    year: 2018,
+    items: [
       {
-        venue: "WMT",
-        title:
-          "MetaMetrics-MT: Tuning Meta-Metrics via Human Preference Calibration",
-        authors: "David Anugraha, Garry Kuwanto, Lucky Susanto, et al.",
-        link: "https://example.com/wmt2024.pdf",
-      },
-      {
-        venue: "ACL",
-        title:
-          "Exploring Contextual Bias in Cross-Lingual Text Generation Models",
-        authors: "Alyssa Tan, Rio Handoko, Genta Winata, et al.",
-        link: "https://example.com/acl2024.pdf",
+        venue: "EDP",
+        title: "Field performance of shallow recharge well",
+        authors: "EDP Sciences",
+        link: "https://doi.org/10.1051/matecconf/201819505006",
       },
     ],
   },
@@ -92,7 +82,7 @@ export const Publications: React.FC<PublicationsProps> = ({ data }) => {
           </button>
 
           <h2 className="text-4xl font-bold mb-10 text-center text-gray-900">
-            Publications
+            Publikasi
           </h2>
 
           <div className="space-y-12">
