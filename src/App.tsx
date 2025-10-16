@@ -8,7 +8,6 @@ import { Socialmedia } from "./components/Socialmedia";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import ImplementasiSummary from "./components/ProyekDepan";
-import Publications, { publicationsData } from "./components/Publications"; // ✅ import data
 import WhyChooseUs from "./components/Reason";
 
 function App() {
@@ -42,7 +41,6 @@ function App() {
       <Products />
       <ImplementasiSummary />
       <Testimoni />
-      <Publications data={publicationsData} /> {/* ✅ gunakan data */}
       <Socialmedia />
       <Contact />
       <Footer />

@@ -6,6 +6,7 @@ import App from "./App";
 import Implementation from "./pages/ProyekBelakang";
 import ImplementasiSummary from "./components/ProyekDepan";
 import { About } from "./components/About";
+import { Publications } from "./components/Publications";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -78,6 +79,14 @@ export const Routing = () => {
           element={
             <PageWrapper>
               <About />
+            </PageWrapper>
+          }
+        />
+                <Route
+          path="/publikasi"
+          element={
+            <PageWrapper>
+              <Publications />
             </PageWrapper>
           }
         />

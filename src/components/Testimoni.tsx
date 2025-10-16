@@ -6,13 +6,13 @@ const testimonials = [
     name: "Dr. Ir. Edy Susilo, MT",
     title: "Ketua Yayasan Islam Nurus Sunnah",
     message:
-      "NUSA membekali anak-anak untuk punya lifeskill dalam bidang IT dan memiliki karakter yang baik.",
+      "Bagus.",
   },
   {
     name: "Dr.Eng. Adi Wibowo, S.Si., M.Kom",
     title: "Wali Murid SD Islam Nurus Sunnah",
     message:
-      "Keren banget! NUSA tidak hanya fokus ke ilmu agama dan akhlak mulia sesuai tuntunan Ahlus Sunnah wal Jama’ah, tetapi juga menyiapkan generasi Qur’ani yang menguasai teknologi. Semoga makin sukses dan terus istiqamah!",
+      "Keren banget! CV. Rekayasa Nusa Mandiri sangat membantu dalam mempersiapkan generasi yang menguasai lingkungan.",
   },
   {
     name: "Izzul Fairuz Mahendra",
@@ -22,7 +22,7 @@ const testimonials = [
   {
     name: "Muhammad Ramadhan Rayyan",
     title: "Programmer NUSA Boarding School 2025",
-    message: "Agus.",
+    message: "Bagus banget.",
   },
   {
     name: "Rayhan Iqbal Habibi",
@@ -55,7 +55,7 @@ export const Testimoni = () => {
       <div className="max-w-2xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-gray-900 mb-4">Testimoni</h2>
         <p className="text-gray-600 text-xl mb-8">
-          Apa kata mereka tentang NUSA Boarding School
+          Apa kata mereka tentang CV. Rekayasa Nusa Mandiri
         </p>
 
         {/* Card Testimoni */}

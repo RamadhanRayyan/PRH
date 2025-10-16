@@ -10,14 +10,14 @@ export const Navbar = () => {
 
   const handleNavigation = (id: string) => {
     if (id === "#tentangkami") {
-      // khusus Tentang Kami → pindah ke halaman /about
       navigate("/about");
+    } else if (id === "#publikasi") {
+      // khusus Publikasi → pindah ke halaman /publikasi
+      navigate("/publikasi");
     } else {
       if (location.pathname !== "/") {
-        // kalau bukan di halaman utama → pindah ke "/" sambil bawa info section
         navigate("/", { state: { scrollTo: id.replace("#", "") } });
       } else {
-        // kalau sudah di halaman utama → langsung scroll
         const section = document.querySelector(id);
         if (section) {
           section.scrollIntoView({ behavior: "smooth" });
@@ -32,6 +32,7 @@ export const Navbar = () => {
     { name: "Tentang Kami", id: "#tentangkami" },
     { name: "Produk", id: "#produk" },
     { name: "Proyek", id: "#proyek" },
+    { name: "Publikasi", id: "#publikasi" }, // ← tambahan di sini
     { name: "Kontak", id: "#kontak" },
   ];
 
@@ -72,11 +73,7 @@ export const Navbar = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100"
           >
-            {isMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
