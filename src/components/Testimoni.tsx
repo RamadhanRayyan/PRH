@@ -11,6 +11,13 @@ const testimonials = [
     initial: "E",
   },
   {
+  name: "Muhammad Ramadhan Rayyan",
+  title: "Programming - NUSA Boarding School",
+  message: "Sebagai siswa IT, saya kagum bagaimana PRH menggabungkan teknologi sederhana dengan dampak besar. Inovasi ini bukti bahwa solusi besar bisa lahir dari ide yang sederhana tapi tulus.",
+  color: "bg-blue-500",
+  initial: "M",
+},
+  {
     name: "Dr.Eng. Adi Wibowo, S.Si., M.Kom",
     title: "Dosen Teknik Lingkungan",
     message:
@@ -36,7 +43,7 @@ const testimonials = [
   },
   {
     name: "Izzul Fairuz Mahendra",
-    title: "Desainer NUSA Boarding School",
+    title: "Desainer - NUSA Boarding School",
     message:
       "Pipa Resapan Horizontal ini adalah inovasi lokal yang keren. Tidak hanya bermanfaat, tapi juga memperindah tata ruang kota.",
     color: "bg-purple-500",
@@ -45,21 +52,17 @@ const testimonials = [
 ];
 
 export const Testimoni = () => {
-  // kasih tipe biar VS Code paham itu div
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [showLeft, setShowLeft] = useState(false);
   const [showRight, setShowRight] = useState(true);
 
-  // fix tipe direction dan scrollRef
   const scroll = (direction: "left" | "right") => {
     const container = scrollRef.current;
     if (!container) return;
 
     const scrollAmount = 350;
-    const leftValue = direction === "left" ? -scrollAmount : scrollAmount;
-
     container.scrollBy({
-      left: leftValue,
+      left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
     });
   };
@@ -80,17 +83,20 @@ export const Testimoni = () => {
     const container = scrollRef.current;
     if (!container) return;
     container.addEventListener("scroll", handleScroll);
-    handleScroll(); // cek posisi awal
+    handleScroll();
     return () => container.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <section id="testimoni" className="py-16 bg-gray-50 relative">
+    <section
+      id="testimoni"
+      className="pt-16 pb-32 bg-gray-50 relative overflow-hidden"
+    >
       <div className="max-w-6xl mx-auto px-6 relative">
         <h2 className="text-4xl font-bold text-gray-900 text-center mb-4">
           Testimoni
         </h2>
-        <p className="text-gray-600 text-lg text-center mb-10">
+        <p className="text-gray-600 text-lg text-center mb-12">
           Pendapat mereka tentang PRH (Pipa Resapan Horizontal) untuk konservasi
           air dan penanggulangan banjir
         </p>
@@ -108,7 +114,7 @@ export const Testimoni = () => {
         {/* Wrapper scroll */}
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory px-2 md:px-0"
+          className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory px-2 md:px-0 pb-6"
           style={{
             scrollbarWidth: "none",
             msOverflowStyle: "none",
@@ -117,17 +123,17 @@ export const Testimoni = () => {
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className="min-w-[280px] md:min-w-[320px] bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center snap-start border border-gray-100"
+              className="min-w-[280px] md:min-w-[320px] bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center snap-start border border-gray-100 hover:shadow-xl transition-shadow duration-300"
             >
               <div
-                className={`w-14 h-14 ${item.color} text-white rounded-full flex items-center justify-center text-xl font-bold mb-4`}
+                className={`w-16 h-16 ${item.color} text-white rounded-full flex items-center justify-center text-2xl font-bold mb-5 shadow-sm`}
               >
                 {item.initial}
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-gray-900 mb-1">
                 {item.name}
               </h3>
-              <p className="text-sm text-gray-500 mb-4">{item.title}</p>
+              <p className="text-sm text-gray-500 mb-5">{item.title}</p>
               <p className="text-gray-700 italic leading-relaxed">
                 “{item.message}”
               </p>
