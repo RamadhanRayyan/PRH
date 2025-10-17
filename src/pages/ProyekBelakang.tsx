@@ -5,15 +5,21 @@ import { Footer } from "../components/Footer";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-import img1 from "../assets/gambar prh 1.0.jpg";
-import img2 from "../assets/gambar prh 2.0.png";
-import img3 from "../assets/gambar prh 3.0.png";
-import img4 from "../assets/gambar prh 4.0.png";
+import img1 from "../assets/03. Kec. Tembalang B.jpeg";
+import img2 from "../assets/J.17B.jpeg";
+import img3 from "../assets/G.8 AA.jpeg";
+import img4 from "../assets/Bringin.1 AA.jpeg";
+import img5 from "../assets/13. Kel. SDGM AA.jpeg";
+import img6 from "../assets/01. J1 Drptm B.jpeg";
+import img7 from "../assets/J.17B.jpeg";
+import img9 from "../assets/Bringin.4 AA.jpeg"
+import img10 from "../assets/J.16A.jpeg"
 
 // Interface untuk tiap item timeline
 interface TimelineItem {
   id: number;
   kegiatan: string;
+  deskripsi: string; // <–– field baru ditambah di sini
   lokasi: string;
   jumlahPRH: number;
   sumberDana: string;
@@ -21,12 +27,14 @@ interface TimelineItem {
 }
 
 // Data timeline berdasarkan tabel + gambar
-const images = [img1, img2, img3, img4];
+const images = [img1, img2, img3, img4, img5, img6, img7, img9, img10];
 
 const timelineData: TimelineItem[] = [
   {
     id: 1,
     kegiatan: "Kajian TKPRD Kota Semarang",
+    deskripsi:
+      "Kajian teknis penerapan PRH di Kota Semarang untuk mendukung perencanaan tata ruang berbasis konservasi air dan lingkungan berkelanjutan.",
     lokasi: "Kota Semarang",
     jumlahPRH: 10,
     sumberDana: "Dinas Tata Ruang Kota Semarang",
@@ -36,6 +44,8 @@ const timelineData: TimelineItem[] = [
     id: 2,
     kegiatan:
       "Pengisian Air Tanah dengan PRH untuk Mengurangi Bencana Kekeringan di Kelurahan Jabungan dan Rowosari",
+    deskripsi:
+      "Instalasi PRH di daerah perbukitan untuk menjaga ketersediaan air tanah dan mengurangi risiko kekeringan saat musim kemarau.",
     lokasi: "Kelurahan Rowosari dan Jabungan Semarang",
     jumlahPRH: 90,
     sumberDana: "Pemerintah Kota Semarang",
@@ -44,6 +54,8 @@ const timelineData: TimelineItem[] = [
   {
     id: 3,
     kegiatan: "Pembangunan PRH di Kecamatan Gajah Mungkur",
+    deskripsi:
+      "Penerapan PRH di kawasan padat penduduk guna meningkatkan kemampuan tanah dalam menyerap air hujan dan mencegah genangan.",
     lokasi: "Kecamatan Gajah Mungkur Semarang",
     jumlahPRH: 52,
     sumberDana: "Dinas Pekerjaan Umum Kota Semarang",
@@ -52,6 +64,8 @@ const timelineData: TimelineItem[] = [
   {
     id: 4,
     kegiatan: "Pembangunan PRH di Kecamatan Ngaliyan",
+    deskripsi:
+      "Instalasi PRH di Kelurahan Wonosari untuk mendukung manajemen air permukaan dan meningkatkan resapan di area pemukiman.",
     lokasi: "Kelurahan Wonosari",
     jumlahPRH: 15,
     sumberDana: "Dinas Perumahan dan Kawasan Pemukiman Kota Semarang",
@@ -59,34 +73,40 @@ const timelineData: TimelineItem[] = [
   },
   {
     id: 5,
-    kegiatan:
-      "Pembangunan PRH di Kelurahan Sendangmulyo Kecamatan Tembalang",
+    kegiatan: "Pembangunan PRH di Kelurahan Sendangmulyo Kecamatan Tembalang",
+    deskripsi:
+      "Program pembangunan PRH di kawasan Tembalang untuk memperkuat sistem drainase alami dan menekan risiko banjir lokal.",
     lokasi: "Kelurahan Sendangmulyo Semarang",
     jumlahPRH: 22,
     sumberDana:
       "Dinas Perumahan dan Kawasan Pemukiman Kota Semarang",
-    image: images[0],
+    image: images[4],
   },
   {
     id: 6,
-    kegiatan:
-      "Pemasangan PRH di PONPES Nurus Sunnah untuk Mengatasi Kekurangan Air",
+    kegiatan: "Pemasangan PRH di PONPES Nurus Sunnah untuk Mengatasi Kekurangan Air",
+    deskripsi:
+      "Inisiatif PRH di pesantren untuk menjamin ketersediaan air bersih secara berkelanjutan melalui peningkatan infiltrasi air hujan.",
     lokasi: "Kelurahan Jabungan Semarang",
     jumlahPRH: 6,
     sumberDana: "Program PKM DRTPM",
-    image: images[1],
+    image: images[5],
   },
   {
     id: 7,
     kegiatan: "Pemasangan PRH di Kecamatan Tirto Pekalongan",
+    deskripsi:
+      "Pemasangan PRH untuk mengoptimalkan pengelolaan air tanah di wilayah yang rawan genangan musiman.",
     lokasi: "Kecamatan Tirto Pekalongan",
     jumlahPRH: 2,
     sumberDana: "BAPPEDA Kota Pekalongan",
-    image: images[2],
+    image: images[6],
   },
   {
     id: 8,
     kegiatan: "Pemasangan PRH di Kawasan Simpang Lima Semarang",
+    deskripsi:
+      "Instalasi PRH di kawasan strategis kota untuk menambah daya resap air dan mengurangi limpasan permukaan di area publik.",
     lokasi: "Kelurahan Mugasari Semarang",
     jumlahPRH: 52,
     sumberDana: "Program Matching Fund 2023 dengan mitra DPU",
@@ -94,25 +114,30 @@ const timelineData: TimelineItem[] = [
   },
   {
     id: 9,
-    kegiatan:
-      "Pemasangan PRH di daerah Aliran Sungai Bringin Semarang",
+    kegiatan: "Pemasangan PRH di daerah Aliran Sungai Bringin Semarang",
+    deskripsi:
+      "Proyek PRH untuk memperkuat konservasi di daerah aliran sungai guna menekan erosi dan banjir bandang.",
     lokasi: "Kecamatan Ngaliyan Semarang",
     jumlahPRH: 12,
     sumberDana: "Program Penelitian USM 2023",
-    image: images[0],
+    image: images[7],
   },
   {
     id: 10,
     kegiatan: "Pemasangan PRH di Kelurahan Jabungan",
+    deskripsi:
+      "Lanjutan pemasangan PRH untuk memperluas area resapan di kawasan rawan kekeringan dan peningkatan cadangan air tanah.",
     lokasi: "Kelurahan Jabungan",
     jumlahPRH: 22,
     sumberDana: "Program PKM DRTPM 2024",
-    image: images[1],
+    image: images[8],
   },
   {
     id: 11,
     kegiatan:
       "Peran Serta Universitas Semarang dalam Penerapan Zero Delta Q dan Pengurangan Bencana",
+    deskripsi:
+      "Implementasi konsep Zero Delta Q melalui PRH di lingkungan kampus sebagai bagian dari riset dan pengabdian masyarakat.",
     lokasi: "Universitas Semarang",
     jumlahPRH: 57,
     sumberDana: "Universitas Semarang",
@@ -179,11 +204,14 @@ const ProyekBelakang: React.FC = () => {
                   {item.id}
                 </div>
 
-                {/* Konten */}
+                                {/* Konten */}
                 <div className="bg-gray-50 rounded-2xl p-6 md:w-5/12 shadow-lg mt-8 md:mt-0">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">
                     {item.kegiatan}
                   </h3>
+                  <p className="text-gray-600 mb-4">
+                    {item.deskripsi}
+                  </p>
                   <p className="text-gray-600 mb-1">
                     <strong>Lokasi:</strong> {item.lokasi}
                   </p>
@@ -194,6 +222,7 @@ const ProyekBelakang: React.FC = () => {
                     <strong>Sumber Dana:</strong> {item.sumberDana}
                   </p>
                 </div>
+
               </motion.div>
             ))}
           </div>

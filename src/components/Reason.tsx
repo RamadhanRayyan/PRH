@@ -51,7 +51,7 @@ export default function WhyChooseUs() {
         <p className="text-gray-600 max-w-2xl mx-auto mb-10 text-xl">
           Kami menghadirkan solusi pengelolaan air tanah yang modern melalui{" "}
           <span className="font-bold text-blue-600">
-            Pipa Resapan Horizontal
+            Pipa Resapan Horisontal
           </span>{" "}
           — sistem inovatif yang efisien, hemat lahan, dan ramah lingkungan.
         </p>

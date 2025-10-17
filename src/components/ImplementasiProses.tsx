@@ -20,7 +20,7 @@ const timelineData: TimelineItem[] = [
   {
     id: 1,
     title: "Proses Pembuatan PRH",
-    desc: "Tahap awal pembuatan Pipa Resapan Horizontal dengan material berkualitas.",
+    desc: "Tahap awal pembuatan Pipa Resapan Horisontal dengan material berkualitas.",
     image: img1,
   },
   {
@@ -56,7 +56,7 @@ const ImplementasiProses: React.FC = () => {
               Proses Implementasi PRH
             </h1>
             <p className="text-gray-600 mt-4">
-              Proses pemasangan Pipa Resapan Horizontal dari awal hingga versi terbaru.
+              Proses pemasangan Pipa Resapan Horisontal dari awal hingga versi terbaru.
             </p>
           </div>
         </div>

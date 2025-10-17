@@ -37,6 +37,8 @@ export default function ImplementasiSummary() {
   ];
 
   return (
+    <>
+    <div className="h-20 bg-gray-50" id="proyek"></div>
     <section
       id="proyek"
       className="bg-gradient-to-b from-gray-50 to-gray-50 pt-10 min-h-screen shadow-md"
@@ -155,5 +157,6 @@ export default function ImplementasiSummary() {
         <ImplementasiProses />
       </div>
     </section>
+    </>
   );
 }

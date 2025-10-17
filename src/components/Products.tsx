@@ -46,7 +46,7 @@ export const Products = () => {
             Produk Unggulan
           </h2>
           <p className="text-xl text-gray-600">
-            Pipa Resapan Horizontal (PRH) - Teknologi Inovatif untuk Lingkungan
+            Pipa Resapan Horisontal (PRH) - Teknologi Inovatif untuk Lingkungan
           </p>
         </div>
 

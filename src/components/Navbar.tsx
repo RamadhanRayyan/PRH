@@ -51,7 +51,7 @@ export const Navbar = () => {
                   CV. Rekayasa Nusa Mandiri
                 </h1>
                 <p className="text-sm text-gray-600">
-                  Inovasi Teknologi Pipa Resapan
+                  Pipa Resapan Horisontal
                 </p>
               </div>
             </button>

@@ -54,7 +54,7 @@ export const Footer = () => {
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Solusi inovatif untuk konservasi air tanah dan penanggulangan banjir
-              melalui teknologi Pipa Resapan Horizontal (PRH).
+              melalui teknologi Pipa Resapan Horisontal (PRH).
             </p>
           </div>
 
@@ -118,7 +118,7 @@ export const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-10 pt-6 text-center text-gray-400 text-sm">
           © 2025 CV. Rekayasa Nusa Mandiri. Semua hak dilindungi. | 
-          Teknologi Pipa Resapan Horizontal untuk Masa Depan Berkelanjutan
+          Teknologi Pipa Resapan Horisontal untuk Masa Depan Berkelanjutan
         </div>
       </div>
     </footer>

@@ -93,7 +93,7 @@ export const Contact = () => {
 
             {/* Telepon */}
             <a
-              href="https://wa.me/6281390294115?text=Halo%20min%2C%20saya%20tertarik%20dengan%20produk%20Pipa%20Resapan%20Horizontal%20(PRH)"
+              href="https://wa.me/6285600131118?text=Halo%20min%2C%20saya%20tertarik%20dengan%20produk%20Pipa%20Resapan%20Horisontal%20(PRH)"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-start space-x-4 p-4 rounded-xl hover:shadow-xl hover:scale-105 transition-transform bg-white"

@@ -6,7 +6,7 @@ const testimonials = [
     name: "Dr. Ir. Edy Susilo, MT",
     title: "Ketua Yayasan Islam Nurus Sunnah",
     message:
-      "Pipa Resapan Horizontal (PRH) ini sangat membantu dalam konservasi air tanah. Air hujan kini bisa terserap kembali, bukan terbuang percuma.",
+      "Pipa Resapan Horisontal (PRH) ini sangat membantu dalam konservasi air tanah. Air hujan kini bisa terserap kembali, bukan terbuang percuma.",
     color: "bg-blue-500",
     initial: "E",
   },
@@ -45,7 +45,7 @@ const testimonials = [
     name: "Izzul Fairuz Mahendra",
     title: "Desainer - NUSA Boarding School",
     message:
-      "Pipa Resapan Horizontal ini adalah inovasi lokal yang keren. Tidak hanya bermanfaat, tapi juga memperindah tata ruang kota.",
+      "Pipa Resapan Horisontal ini adalah inovasi lokal yang keren. Tidak hanya bermanfaat, tapi juga memperindah tata ruang kota.",
     color: "bg-purple-500",
     initial: "I",
   },
@@ -97,7 +97,7 @@ export const Testimoni = () => {
           Testimoni
         </h2>
         <p className="text-gray-600 text-lg text-center mb-12">
-          Pendapat mereka tentang PRH (Pipa Resapan Horizontal) untuk konservasi
+          Pendapat mereka tentang PRH (Pipa Resapan Horisontal) untuk konservasi
           air dan penanggulangan banjir
         </p>
 
