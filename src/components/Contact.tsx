@@ -13,7 +13,7 @@ export const Contact = () => {
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-blue-100 to-teal-100 rounded-2xl p-6 sm:p-10 shadow-lg">
+        <div className="bg-white rounded-2xl p-6 sm:p-10 shadow-lg">
           <h3 className="text-2xl font-bold text-gray-900 mb-10 text-center">
             Informasi Perusahaan
           </h3>
