@@ -1,90 +1,149 @@
-import { useState, useEffect } from "react";
-import { User } from "lucide-react";
+import { useRef, useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
   {
     name: "Dr. Ir. Edy Susilo, MT",
     title: "Ketua Yayasan Islam Nurus Sunnah",
     message:
-      "Bagus.",
+      "Pipa Resapan Horizontal (PRH) ini sangat membantu dalam konservasi air tanah. Air hujan kini bisa terserap kembali, bukan terbuang percuma.",
+    color: "bg-blue-500",
+    initial: "E",
   },
   {
     name: "Dr.Eng. Adi Wibowo, S.Si., M.Kom",
-    title: "Wali Murid SD Islam Nurus Sunnah",
+    title: "Dosen Teknik Lingkungan",
     message:
-      "Keren banget! CV. Rekayasa Nusa Mandiri sangat membantu dalam mempersiapkan generasi yang menguasai lingkungan.",
+      "Solusi yang cerdas untuk mengurangi genangan air di perkotaan. PRH bukan hanya efisien, tapi juga ramah lingkungan.",
+    color: "bg-red-500",
+    initial: "A",
+  },
+  {
+    name: "Budi Santoso",
+    title: "Pengusaha Properti",
+    message:
+      "Saya sudah menggunakan PRH di beberapa proyek. Hasilnya luar biasa! Area banjir kini menjadi lebih kering dan stabil.",
+    color: "bg-green-500",
+    initial: "B",
+  },
+  {
+    name: "Kevin Prakoso",
+    title: "Mahasiswa Teknik Sipil",
+    message:
+      "PRH membuat saya sadar pentingnya rekayasa air. Sistemnya sederhana, tapi efeknya besar bagi lingkungan dan masyarakat.",
+    color: "bg-yellow-500",
+    initial: "K",
   },
   {
     name: "Izzul Fairuz Mahendra",
-    title: "Designer NUSA Boarding School 2025",
-    message: "Hey bung, hari yang cerah!",
-  },
-  {
-    name: "Muhammad Ramadhan Rayyan",
-    title: "Programmer NUSA Boarding School 2025",
-    message: "Bagus banget.",
-  },
-  {
-    name: "Rayhan Iqbal Habibi",
-    title: "Pengajar NUSA Boarding School 2025",
-    message: "Jaga kesehatan, jangan lupa bahagia.",
-  },
-  {
-    name: "Dr. Ubay Al-Atsary",
-    title: "Profesor Islam Nurus Sunnah",
+    title: "Desainer NUSA Boarding School",
     message:
-      "Akhir dari sesuatu. Adalah awal bagi cerita baru",
+      "Pipa Resapan Horizontal ini adalah inovasi lokal yang keren. Tidak hanya bermanfaat, tapi juga memperindah tata ruang kota.",
+    color: "bg-purple-500",
+    initial: "I",
   },
 ];
 
 export const Testimoni = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // kasih tipe biar VS Code paham itu div
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const [showLeft, setShowLeft] = useState(false);
+  const [showRight, setShowRight] = useState(true);
 
-  // Auto-slide tiap 4 detik
+  // fix tipe direction dan scrollRef
+  const scroll = (direction: "left" | "right") => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const scrollAmount = 350;
+    const leftValue = direction === "left" ? -scrollAmount : scrollAmount;
+
+    container.scrollBy({
+      left: leftValue,
+      behavior: "smooth",
+    });
+  };
+
+  const handleScroll = () => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const isAtStart = container.scrollLeft <= 0;
+    const isAtEnd =
+      container.scrollLeft + container.clientWidth >= container.scrollWidth - 5;
+
+    setShowLeft(!isAtStart);
+    setShowRight(!isAtEnd);
+  };
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 4000);
-    return () => clearInterval(interval);
+    const container = scrollRef.current;
+    if (!container) return;
+    container.addEventListener("scroll", handleScroll);
+    handleScroll(); // cek posisi awal
+    return () => container.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const item = testimonials[currentIndex];
-
   return (
-    <section id="testimoni" className="py-10 bg-gray-50 relative overflow-hidden">
-      <div className="max-w-2xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">Testimoni</h2>
-        <p className="text-gray-600 text-xl mb-8">
-          Apa kata mereka tentang CV. Rekayasa Nusa Mandiri
+    <section id="testimoni" className="py-16 bg-gray-50 relative">
+      <div className="max-w-6xl mx-auto px-6 relative">
+        <h2 className="text-4xl font-bold text-gray-900 text-center mb-4">
+          Testimoni
+        </h2>
+        <p className="text-gray-600 text-lg text-center mb-10">
+          Pendapat mereka tentang PRH (Pipa Resapan Horizontal) untuk konservasi
+          air dan penanggulangan banjir
         </p>
 
-        {/* Card Testimoni */}
-        <div className="bg-white border border-gray-200 rounded-xl shadow-md p-4 sm:p-5 md:p-6 transition-all duration-700 ease-in-out">
-          <div className="flex justify-center mb-4">
-            <div className="w-12 h-12 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center">
-              <User className="w-6 h-6" />
-            </div>
-          </div>
-          <p className="text-gray-700 italic text-lg mb-3 leading-relaxed">
-            “{item.message}”
-          </p>
-          <h3 className="text-xl font-semibold text-gray-900">{item.name}</h3>
-          <p className="text-sm text-gray-600">{item.title}</p>
-        </div>
+        {/* Tombol panah kiri */}
+        {showLeft && (
+          <button
+            onClick={() => scroll("left")}
+            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white shadow-lg p-3 rounded-full hover:bg-gray-100 transition"
+          >
+            <ChevronLeft className="w-6 h-6 text-gray-700" />
+          </button>
+        )}
 
-        {/* Dots indikator */}
-        <div className="flex justify-center mt-4 space-x-2">
-          {testimonials.map((_, index) => (
-            <span
+        {/* Wrapper scroll */}
+        <div
+          ref={scrollRef}
+          className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory px-2 md:px-0"
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }}
+        >
+          {testimonials.map((item, index) => (
+            <div
               key={index}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                index === currentIndex
-                  ? "bg-blue-600 scale-110"
-                  : "bg-gray-300"
-              }`}
-            ></span>
+              className="min-w-[280px] md:min-w-[320px] bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center snap-start border border-gray-100"
+            >
+              <div
+                className={`w-14 h-14 ${item.color} text-white rounded-full flex items-center justify-center text-xl font-bold mb-4`}
+              >
+                {item.initial}
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900">
+                {item.name}
+              </h3>
+              <p className="text-sm text-gray-500 mb-4">{item.title}</p>
+              <p className="text-gray-700 italic leading-relaxed">
+                “{item.message}”
+              </p>
+            </div>
           ))}
         </div>
+
+        {/* Tombol panah kanan */}
+        {showRight && (
+          <button
+            onClick={() => scroll("right")}
+            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white shadow-lg p-3 rounded-full hover:bg-gray-100 transition"
+          >
+            <ChevronRight className="w-6 h-6 text-gray-700" />
+          </button>
+        )}
       </div>
     </section>
   );
