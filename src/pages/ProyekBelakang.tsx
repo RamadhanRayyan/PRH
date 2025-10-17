@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
@@ -9,34 +10,117 @@ import img2 from "../assets/gambar prh 2.0.png";
 import img3 from "../assets/gambar prh 3.0.png";
 import img4 from "../assets/gambar prh 4.0.png";
 
-const timelineData = [
+// Interface untuk tiap item timeline
+interface TimelineItem {
+  id: number;
+  kegiatan: string;
+  lokasi: string;
+  jumlahPRH: number;
+  sumberDana: string;
+  image: string;
+}
+
+// Data timeline berdasarkan tabel + gambar
+const images = [img1, img2, img3, img4];
+
+const timelineData: TimelineItem[] = [
   {
     id: 1,
-    title: "Proses Pembuatan PRH",
-    desc: "Tahap awal pembuatan Pipa Resapan Horizontal dengan material berkualitas.",
-    image: img1,
+    kegiatan: "Kajian TKPRD Kota Semarang",
+    lokasi: "Kota Semarang",
+    jumlahPRH: 10,
+    sumberDana: "Dinas Tata Ruang Kota Semarang",
+    image: images[0],
   },
   {
     id: 2,
-    title: "Persiapan Lahan",
-    desc: "Survei dan persiapan lokasi untuk pemasangan sistem PRH.",
-    image: img2,
+    kegiatan:
+      "Pengisian Air Tanah dengan PRH untuk Mengurangi Bencana Kekeringan di Kelurahan Jabungan dan Rowosari",
+    lokasi: "Kelurahan Rowosari dan Jabungan Semarang",
+    jumlahPRH: 90,
+    sumberDana: "Pemerintah Kota Semarang",
+    image: images[1],
   },
   {
     id: 3,
-    title: "Pemasangan Input Saluran",
-    desc: "Instalasi saluran input dan talang air untuk sistem PRH.",
-    image: img3,
+    kegiatan: "Pembangunan PRH di Kecamatan Gajah Mungkur",
+    lokasi: "Kecamatan Gajah Mungkur Semarang",
+    jumlahPRH: 52,
+    sumberDana: "Dinas Pekerjaan Umum Kota Semarang",
+    image: images[2],
   },
   {
     id: 4,
-    title: "Hasil Akhir Pemasangan",
-    desc: "Sistem PRH yang telah terpasang dan siap beroperasi.",
-    image: img4,
+    kegiatan: "Pembangunan PRH di Kecamatan Ngaliyan",
+    lokasi: "Kelurahan Wonosari",
+    jumlahPRH: 15,
+    sumberDana: "Dinas Perumahan dan Kawasan Pemukiman Kota Semarang",
+    image: images[3],
+  },
+  {
+    id: 5,
+    kegiatan:
+      "Pembangunan PRH di Kelurahan Sendangmulyo Kecamatan Tembalang",
+    lokasi: "Kelurahan Sendangmulyo Semarang",
+    jumlahPRH: 22,
+    sumberDana:
+      "Dinas Perumahan dan Kawasan Pemukiman Kota Semarang",
+    image: images[0],
+  },
+  {
+    id: 6,
+    kegiatan:
+      "Pemasangan PRH di PONPES Nurus Sunnah untuk Mengatasi Kekurangan Air",
+    lokasi: "Kelurahan Jabungan Semarang",
+    jumlahPRH: 6,
+    sumberDana: "Program PKM DRTPM",
+    image: images[1],
+  },
+  {
+    id: 7,
+    kegiatan: "Pemasangan PRH di Kecamatan Tirto Pekalongan",
+    lokasi: "Kecamatan Tirto Pekalongan",
+    jumlahPRH: 2,
+    sumberDana: "BAPPEDA Kota Pekalongan",
+    image: images[2],
+  },
+  {
+    id: 8,
+    kegiatan: "Pemasangan PRH di Kawasan Simpang Lima Semarang",
+    lokasi: "Kelurahan Mugasari Semarang",
+    jumlahPRH: 52,
+    sumberDana: "Program Matching Fund 2023 dengan mitra DPU",
+    image: images[3],
+  },
+  {
+    id: 9,
+    kegiatan:
+      "Pemasangan PRH di daerah Aliran Sungai Bringin Semarang",
+    lokasi: "Kecamatan Ngaliyan Semarang",
+    jumlahPRH: 12,
+    sumberDana: "Program Penelitian USM 2023",
+    image: images[0],
+  },
+  {
+    id: 10,
+    kegiatan: "Pemasangan PRH di Kelurahan Jabungan",
+    lokasi: "Kelurahan Jabungan",
+    jumlahPRH: 22,
+    sumberDana: "Program PKM DRTPM 2024",
+    image: images[1],
+  },
+  {
+    id: 11,
+    kegiatan:
+      "Peran Serta Universitas Semarang dalam Penerapan Zero Delta Q dan Pengurangan Bencana",
+    lokasi: "Universitas Semarang",
+    jumlahPRH: 57,
+    sumberDana: "Universitas Semarang",
+    image: images[2],
   },
 ];
 
-const ProyekBelakang = () => {
+const ProyekBelakang: React.FC = () => {
   const navigate = useNavigate();
 
   return (
@@ -56,10 +140,10 @@ const ProyekBelakang = () => {
           {/* Judul */}
           <div className="text-center mb-16">
             <h1 className="text-4xl font-bold text-gray-900">
-              Proses Implementasi PRH
+              Timeline Implementasi PRH
             </h1>
             <p className="text-gray-600 mt-4">
-              Proses pemasangan Pipa Resapan Horizontal dari awal hingga versi terbaru.
+              Ringkasan kegiatan pembangunan dan pemasangan PRH dari awal hingga akhir
             </p>
           </div>
         </div>
@@ -85,7 +169,7 @@ const ProyekBelakang = () => {
                 <div className="md:w-5/12">
                   <img
                     src={item.image}
-                    alt={item.title}
+                    alt={item.kegiatan}
                     className="rounded-2xl shadow-lg w-full object-cover"
                   />
                 </div>
@@ -95,12 +179,20 @@ const ProyekBelakang = () => {
                   {item.id}
                 </div>
 
-                {/* Teks */}
+                {/* Konten */}
                 <div className="bg-gray-50 rounded-2xl p-6 md:w-5/12 shadow-lg mt-8 md:mt-0">
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-2">
-                    {item.title}
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                    {item.kegiatan}
                   </h3>
-                  <p className="text-gray-600">{item.desc}</p>
+                  <p className="text-gray-600 mb-1">
+                    <strong>Lokasi:</strong> {item.lokasi}
+                  </p>
+                  <p className="text-gray-600 mb-1">
+                    <strong>Jumlah PRH:</strong> {item.jumlahPRH}
+                  </p>
+                  <p className="text-gray-600">
+                    <strong>Sumber Dana:</strong> {item.sumberDana}
+                  </p>
                 </div>
               </motion.div>
             ))}

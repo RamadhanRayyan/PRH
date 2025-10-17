@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Building, Award, MapPin, Calendar, ArrowRight } from "lucide-react";
-import { ImplementasiProses } from "./ImplementasiProses";
+import ImplementasiProses from "./ImplementasiProses";
 import img1 from "../assets/gambar prh 2.0.png";
 import img2 from "../assets/gambar prh 3.0.png";
 import img3 from "../assets/gambar prh 4.0.png";
