@@ -9,16 +9,16 @@ export default function ImplementasiSummary() {
   const projects = [
     {
       image: img1,
-      title: "Proyek PRH - Gedung Pemerintahan",
+      title: "Pemasangan PRH - Gedung Pemerintahan",
       description:
-        "Implementasi sistem PRH di gedung pemerintahan dengan total 20 unit terpasang, meningkatkan efisiensi dan keamanan pengelolaan air.",
+        "Implementasi sistem PRH di gedung pemerintahan dengan total 20 unit terpasang, meningkatkan peresapan air.",
       lokasi: "Kel. Rowosari & Jabungan, Semarang",
       jumlah: 90,
       sumber: "Pemerintah Kota Semarang",
     },
     {
       image: img2,
-      title: "Proyek PRH - Kawasan Industri",
+      title: "Pemasangan PRH - Kawasan Industri",
       description:
         "Instalasi PRH di kawasan industri untuk mendukung manajemen air berkelanjutan dengan sistem pemantauan otomatis.",
       lokasi: "Kawasan Industri Terboyo, Semarang",
@@ -27,7 +27,7 @@ export default function ImplementasiSummary() {
     },
     {
       image: img3,
-      title: "Proyek PRH - Perumahan Warga",
+      title: "Pemasangan PRH - Perumahan Warga",
       description:
         "Penerapan sistem PRH di perumahan warga yang meningkatkan efisiensi penggunaan air serta meminimalisir kebocoran distribusi.",
       lokasi: "Perumahan Bukit Asri, Ungaran",
@@ -44,7 +44,7 @@ export default function ImplementasiSummary() {
       className="bg-gradient-to-b from-gray-50 to-gray-50 pt-10 min-h-screen shadow-md"
     >
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-gray-900 mb-3">Proyek</h2>
+        <h2 className="text-4xl font-bold text-gray-900 mb-3">Pemasangan PRH</h2>
         <p className="text-gray-600 mb-10">
           Track Record Pemasangan PRH di Berbagai Wilayah
         </p>
@@ -91,7 +91,7 @@ export default function ImplementasiSummary() {
         {/* Judul */}
         <div className="text-center mb-6">
           <h3 className="text-2xl font-bold text-gray-900 mb-2">
-            Implementasi Proyek PRH
+            Implementasi Pemasangan PRH
           </h3>
           <p className="text-gray-600">
             Beberapa proyek unggulan yang telah kami selesaikan.

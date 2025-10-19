@@ -49,11 +49,11 @@ export default function WhyChooseUs() {
         </h2>
 
         <p className="text-gray-600 max-w-2xl mx-auto mb-10 text-xl">
-          Kami menghadirkan solusi pengelolaan air tanah yang modern melalui{" "}
+          Kami menghadirkan solusi untuk mengatasi permasalahan banjir, kekurangan air tanah, mencegah intrusi air laut, mengurangi land subsidence dengan{" "}
           <span className="font-bold text-blue-600">
             Pipa Resapan Horisontal
           </span>{" "}
-          — sistem inovatif yang efisien, hemat lahan, dan ramah lingkungan.
+        sistem inovatif yang efisien, hemat lahan, dan ramah lingkungan.
         </p>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
