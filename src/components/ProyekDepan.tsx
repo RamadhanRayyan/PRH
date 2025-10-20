@@ -1,51 +1,51 @@
 import { Link } from "react-router-dom";
 import { Building, Award, MapPin, Calendar, ArrowRight } from "lucide-react";
 import ImplementasiProses from "./ImplementasiProses";
-import img1 from "../assets/gambar prh 2.0.png";
-import img2 from "../assets/gambar prh 3.0.png";
-import img3 from "../assets/gambar prh 4.0.png";
+import img2 from "../assets/Bringin.3 AA.jpeg"
+import img3 from "../assets/01. J1 Drptm B.jpeg";
+import img4 from "../assets/J.16A.jpeg"
 
 export default function ImplementasiSummary() {
   const projects = [
     {
-      image: img1,
+      image: img4,
       title: "Pemasangan PRH - Gedung Pemerintahan",
       description:
-        "Implementasi sistem PRH di gedung pemerintahan dengan total 20 unit terpasang, meningkatkan peresapan air.",
+        "Implementasi sistem PRH di gedung pemerintahan dengan total 90 unit terpasang, meningkatkan peresapan air.",
       lokasi: "Kel. Rowosari & Jabungan, Semarang",
       jumlah: 90,
       sumber: "Pemerintah Kota Semarang",
     },
     {
-      image: img2,
-      title: "Pemasangan PRH - Kawasan Industri",
+      image: img3,
+      title: "Pemasangan PRH - PONPES Nurus Sunnah",
       description:
-        "Instalasi PRH di kawasan industri untuk mendukung manajemen air berkelanjutan dengan sistem pemantauan otomatis.",
-      lokasi: "Kawasan Industri Terboyo, Semarang",
-      jumlah: 120,
-      sumber: "PT Semarang Industrial",
+        "Instalasi PRH di PONPES Nurus Sunnah untuk mendukung manajemen air berkelanjutan dengan sistem pemantauan otomatis.",
+      lokasi: "Kelurahan Jabungan, Banyumanik",
+      jumlah: 6,
+      sumber: "Program PKM DRTPM",
     },
     {
-      image: img3,
+      image: img2,
       title: "Pemasangan PRH - Perumahan Warga",
       description:
         "Penerapan sistem PRH di perumahan warga yang meningkatkan efisiensi penggunaan air serta meminimalisir kebocoran distribusi.",
-      lokasi: "Perumahan Bukit Asri, Ungaran",
-      jumlah: 70,
-      sumber: "Developer Swasta",
+      lokasi: "Kelurahan Wonosari, Ngaliyan",
+      jumlah: 15,
+      sumber: "Dinas Perumahan dan Kawasan Pemukiman Kota Semarang",
     },
   ];
 
   return (
     <>
-    <div className="h-20 bg-gray-50" id="proyek"></div>
+    <div className="h-20 bg-[#0F5E99]" id="proyek"></div>
     <section
       id="proyek"
-      className="bg-gradient-to-b from-gray-50 to-gray-50 pt-10 min-h-screen shadow-md"
+      className="bg-[#0F5E99] pt-10 min-h-screen shadow-md"
     >
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-gray-900 mb-3">Pemasangan PRH</h2>
-        <p className="text-gray-600 mb-10">
+        <h2 className="text-4xl font-bold text-yellow-400 mb-3">Pemasangan PRH</h2>
+        <p className="text-xl text-white mb-10">
           Track Record Pemasangan PRH di Berbagai Wilayah
         </p>
 
@@ -90,10 +90,10 @@ export default function ImplementasiSummary() {
 
         {/* Judul */}
         <div className="text-center mb-6">
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">
+          <h3 className="text-4xl font-bold text-yellow-400 mb-2">
             Implementasi Pemasangan PRH
           </h3>
-          <p className="text-gray-600">
+          <p className="text-white text-xl">
             Beberapa proyek unggulan yang telah kami selesaikan.
           </p>
         </div>
@@ -130,7 +130,7 @@ export default function ImplementasiSummary() {
                   </p>
                   <p>
                     <span className="font-semibold text-gray-900">
-                      Sumber Proyek:
+                      Sumber Dana:
                     </span>{" "}
                     {project.sumber}
                   </p>
@@ -146,7 +146,7 @@ export default function ImplementasiSummary() {
             to="/implementasi-detail"
             className="inline-block px-8 py-4 bg-blue-600 text-white text-sm rounded-full font-semibold hover:bg-blue-700 transition"
           >
-            Lihat Implementasi PRH Lainnya{" "}
+            Lihat Implementasi Pemasangan PRH Lainnya{" "}
             <ArrowRight className="w-5 h-5 inline-block" />
           </Link>
         </div>

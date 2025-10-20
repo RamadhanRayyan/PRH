@@ -39,13 +39,13 @@ export const Products = () => {
 
   const [] = useState<(typeof products)[0] | null>(null);
   return (
-    <section id="produk" className="py-20 bg-gray-50 shadow-lg">
+    <section id="produk" className="py-20 bg-[#0F5E99] shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-yellow-400 mb-4">
             Produk Unggulan
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-white">
             Pipa Resapan Horisontal (PRH) - Teknologi Inovatif untuk Lingkungan
           </p>
         </div>
@@ -64,7 +64,7 @@ export const Products = () => {
                 <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                   {/* FRONT SIDE */}
                   <div className="absolute inset-0 bg-white rounded-2xl shadow-lg overflow-hidden [backface-visibility:hidden] [transform:rotateY(0deg)]">
-                    <div className="bg-gradient-to-r from-blue-600 to-teal-600 p-6 text-white">
+                    <div className="bg-gradient-to-r from-blue-600 to-yellow-600 p-6 text-white">
                       <h3 className="text-2xl font-bold mb-2">
                         {product.type}
                       </h3>
@@ -116,7 +116,7 @@ export const Products = () => {
               href="https://katalog.inaproc.id/rekayasa-nusa-mandiri/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center bg-gradient-to-r from-blue-600 to-yellow-600 hover:from-blue-700 hover:to-teal-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
             >
               <ExternalLink className="mr-2 h-5 w-5" />
               Lihat E-Katalog

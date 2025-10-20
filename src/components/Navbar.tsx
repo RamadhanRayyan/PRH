@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
-import logo from "../assets/logo.png";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,7 +36,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <header className="bg-white shadow-lg fixed w-full top-0 z-50">
+    <header className="bg-[#0F5E99] shadow-lg fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-3">
@@ -45,22 +44,10 @@ export const Navbar = () => {
               onClick={() => navigate("/")}
               className="flex items-center space-x-3"
             >
-              <img
-                src={logo}
-                className="h-10 w-10 cursor-pointer"
-                alt="Logo"
-                onClick={() => {
-                  const section = document.getElementById("beranda");
-                  section?.scrollIntoView({ behavior: "smooth" });
-                }}
-              />
               <div className="text-start">
-                <h1 className="text-xl font-bold text-gray-800">
-                  CV. Rekayasa Nusa Mandiri
-                </h1>
-                <p className="text-sm text-gray-600">
+                <h1 className="text-xl font-bold text-yellow-400">
                   Pipa Resapan Horisontal
-                </p>
+                </h1>
               </div>
             </button>
           </div>
@@ -70,7 +57,7 @@ export const Navbar = () => {
               <button
                 key={item.name}
                 onClick={() => handleNavigation(item.id)}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                className="text-yellow-400 hover:text-yellow-600 transition-colors font-medium"
               >
                 {item.name}
               </button>
@@ -79,7 +66,7 @@ export const Navbar = () => {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100"
+            className="md:hidden p-2 rounded-md text-yellow-400 hover:text-yellow-600 hover:bg-gray-100"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -92,7 +79,7 @@ export const Navbar = () => {
                 <button
                   key={item.name}
                   onClick={() => handleNavigation(item.id)}
-                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-4 text-left"
+                  className="text-yellow-400 hover:text-yellow-600 transition-colors font-medium py-2 px-4 text-left"
                 >
                   {item.name}
                 </button>

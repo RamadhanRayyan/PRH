@@ -9,7 +9,7 @@ export const Hero = () => {
       style={{ backgroundImage: `url(${hero})`, backgroundPositionY: '-120px'}}
     >
       {/* overlay */}
-      <div className="absolute inset-0 bg-black/35"></div>
+      <div className="absolute inset-0 bg-blue-900/50"></div>
 
       {/* content */}
       <div className="relative z-10 w-full max-w-3xl mx-auto px-4 sm:px-6 lg:pl-16">
@@ -20,8 +20,8 @@ export const Hero = () => {
             style={{ textShadow: "2px 2px 8px rgba(0,0,0,0.7)" }}
           >
             Solusi Inovatif untuk
-            <span className="text-blue-400"> Konservasi Air Tanah</span> dan
-            <span className="text-blue-400"> Penanggulangan Banjir</span>
+            <span className="text-yellow-400"> Konservasi Air Tanah</span> dan
+            <span className="text-yellow-400"> Penanggulangan Banjir</span>
           </h1>
 
           <p className="text-lg lg:text-xl text-gray-100 mb-8 leading-relaxed text-center">
@@ -35,7 +35,7 @@ export const Hero = () => {
             <a
               href="/Booklet.pdf" // ganti path sesuai lokasi file kamu
               download
-              className="flex items-center justify-center px-6 py-3 bg-blue-500 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition duration-300"
+              className="flex items-center justify-center px-6 py-3 bg-[#0F5E99] text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition duration-300"
             >
               <BookOpen className="w-5 h-5 mr-2" />
               Lihat Booklet

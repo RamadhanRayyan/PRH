@@ -161,19 +161,19 @@ export const Publications: React.FC<PublicationsProps> = ({ data }) => {
       <Navbar />
       <section
         id="publikasi"
-        className="min-h-screen bg-white text-gray-800 px-6 py-16 pt-28"
+        className="min-h-screen bg-[#0F5E99] text-white px-6 py-16 pt-28"
       >
         <div className="max-w-4xl mx-auto">
           {/* Tombol Kembali */}
           <button
             onClick={() => navigate(-1)}
-            className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors mb-8 font-medium"
+            className="flex items-center gap-2 text-yellow-400 hover:text-yellow-600 transition-colors mb-8 font-medium"
           >
             <ArrowLeft className="w-5 h-5" />
             Kembali
           </button>
 
-          <h2 className="text-4xl font-bold mb-10 text-center text-gray-900">
+          <h2 className="text-4xl font-bold mb-10 text-center text-yellow-400">
             Publikasi
           </h2>
 
@@ -183,13 +183,13 @@ export const Publications: React.FC<PublicationsProps> = ({ data }) => {
               return (
                 <div key={group.year}>
                   <div
-                    className="flex justify-between items-center cursor-pointer border-b border-gray-300 pb-2"
+                    className="flex justify-between items-center cursor-pointer border-b border-white pb-2"
                     onClick={() => toggleYear(group.year)}
                   >
-                    <h3 className="text-2xl font-semibold text-blue-600">
+                    <h3 className="text-2xl font-semibold text-white">
                       {group.year}
                     </h3>
-                    <span className="text-xl text-gray-500">
+                    <span className="text-xl text-white">
                       {isCollapsed ? "+" : "–"}
                     </span>
                   </div>

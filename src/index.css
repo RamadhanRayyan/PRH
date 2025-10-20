@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@theme {
+  --color-roy: #0FE599;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }

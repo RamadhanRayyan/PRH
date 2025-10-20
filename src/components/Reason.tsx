@@ -42,15 +42,15 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-16 bg-gray-50" id="why-choose-us">
+    <section className="py-16 bg-[#0F5E99]" id="why-choose-us">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-4">
+        <h2 className="text-4xl font-bold text-yellow-400 mb-4">
           Mengapa Harus Menggunakan PRH?
         </h2>
 
-        <p className="text-gray-600 max-w-2xl mx-auto mb-10 text-xl">
+        <p className="text-white max-w-2xl mx-auto mb-10 text-xl">
           Kami menghadirkan solusi untuk mengatasi permasalahan banjir, kekurangan air tanah, mencegah intrusi air laut, mengurangi land subsidence dengan{" "}
-          <span className="font-bold text-blue-600">
+          <span className="font-bold text-yellow-400">
             Pipa Resapan Horisontal
           </span>{" "}
         sistem inovatif yang efisien, hemat lahan, dan ramah lingkungan.

@@ -11,23 +11,26 @@ import img3 from "../assets/G.8 AA.jpeg";
 import img4 from "../assets/Bringin.1 AA.jpeg";
 import img5 from "../assets/13. Kel. SDGM AA.jpeg";
 import img6 from "../assets/01. J1 Drptm B.jpeg";
-import img7 from "../assets/J.17B.jpeg";
-import img9 from "../assets/Bringin.4 AA.jpeg"
-import img10 from "../assets/J.16A.jpeg"
+import img7 from "../assets/Screenshot 2025-10-20 112152.png";
+import img8 from "../assets/SIMPANG.png"
+import img9 from "../assets/Bringin.4 AA.jpeg";
+import img10 from "../assets/J.16A.jpeg";
+import img11 from "../assets/567.jpeg"
 
 // Interface untuk tiap item timeline
 interface TimelineItem {
   id: number;
   kegiatan: string;
-  deskripsi: string; // <–– field baru ditambah di sini
+  deskripsi: string;
   lokasi: string;
   jumlahPRH: number;
   sumberDana: string;
+  tanggal: string; // field baru
   image: string;
 }
 
 // Data timeline berdasarkan tabel + gambar
-const images = [img1, img2, img3, img4, img5, img6, img7, img9, img10];
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11];
 
 const timelineData: TimelineItem[] = [
   {
@@ -38,6 +41,7 @@ const timelineData: TimelineItem[] = [
     lokasi: "Kota Semarang",
     jumlahPRH: 10,
     sumberDana: "Dinas Tata Ruang Kota Semarang",
+    tanggal: "2021",
     image: images[0],
   },
   {
@@ -46,9 +50,10 @@ const timelineData: TimelineItem[] = [
       "Pengisian Air Tanah dengan PRH untuk Mengurangi Bencana Kekeringan di Kelurahan Jabungan dan Rowosari",
     deskripsi:
       "Instalasi PRH di daerah perbukitan untuk menjaga ketersediaan air tanah dan mengurangi risiko kekeringan saat musim kemarau.",
-    lokasi: "Kelurahan Rowosari dan Jabungan Semarang",
+    lokasi: "Kelurahan Rowosari dan Jabungan Kota Semarang",
     jumlahPRH: 90,
     sumberDana: "Pemerintah Kota Semarang",
+    tanggal: "2022",
     image: images[1],
   },
   {
@@ -56,9 +61,10 @@ const timelineData: TimelineItem[] = [
     kegiatan: "Pembangunan PRH di Kecamatan Gajah Mungkur",
     deskripsi:
       "Penerapan PRH di kawasan padat penduduk guna meningkatkan kemampuan tanah dalam menyerap air hujan dan mencegah genangan.",
-    lokasi: "Kecamatan Gajah Mungkur Semarang",
+    lokasi: "Kecamatan Gajah Mungkur Kota Semarang",
     jumlahPRH: 52,
     sumberDana: "Dinas Pekerjaan Umum Kota Semarang",
+    tanggal: "2022",
     image: images[2],
   },
   {
@@ -66,20 +72,21 @@ const timelineData: TimelineItem[] = [
     kegiatan: "Pembangunan PRH di Kecamatan Ngaliyan",
     deskripsi:
       "Instalasi PRH di Kelurahan Wonosari untuk mendukung manajemen air permukaan dan meningkatkan resapan di area pemukiman.",
-    lokasi: "Kelurahan Wonosari",
+    lokasi: "Kelurahan Wonosari Kecamatan Ngaliyan Kota Semarang",
     jumlahPRH: 15,
     sumberDana: "Dinas Perumahan dan Kawasan Pemukiman Kota Semarang",
+    tanggal: "2022",
     image: images[3],
   },
   {
     id: 5,
-    kegiatan: "Pembangunan PRH di Kelurahan Sendangmulyo Kecamatan Tembalang",
+    kegiatan: "Pemasangan PRH di Kelurahan Sendangmulyo Kecamatan Tembalang",
     deskripsi:
       "Program pembangunan PRH di kawasan Tembalang untuk memperkuat sistem drainase alami dan menekan risiko banjir lokal.",
-    lokasi: "Kelurahan Sendangmulyo Semarang",
+    lokasi: "Kelurahan Sendangmulyo Kecamatan Tembalang Kota Semarang",
     jumlahPRH: 22,
-    sumberDana:
-      "Dinas Perumahan dan Kawasan Pemukiman Kota Semarang",
+    sumberDana: "Dinas Perumahan dan Kawasan Pemukiman Kota Semarang",
+    tanggal: "2022",
     image: images[4],
   },
   {
@@ -87,9 +94,10 @@ const timelineData: TimelineItem[] = [
     kegiatan: "Pemasangan PRH di PONPES Nurus Sunnah untuk Mengatasi Kekurangan Air",
     deskripsi:
       "Inisiatif PRH di pesantren untuk menjamin ketersediaan air bersih secara berkelanjutan melalui peningkatan infiltrasi air hujan.",
-    lokasi: "Kelurahan Jabungan Semarang",
+    lokasi: "Kelurahan Jabungan Kecamatan Banyumanik Kota Semarang",
     jumlahPRH: 6,
     sumberDana: "Program PKM DRTPM",
+    tanggal: "2022",
     image: images[5],
   },
   {
@@ -97,9 +105,10 @@ const timelineData: TimelineItem[] = [
     kegiatan: "Pemasangan PRH di Kecamatan Tirto Pekalongan",
     deskripsi:
       "Pemasangan PRH untuk mengoptimalkan pengelolaan air tanah di wilayah yang rawan genangan musiman.",
-    lokasi: "Kecamatan Tirto Pekalongan",
+    lokasi: "Kelurahan Tirto Kota Pekalongan",
     jumlahPRH: 2,
     sumberDana: "BAPPEDA Kota Pekalongan",
+    tanggal: "2022",
     image: images[6],
   },
   {
@@ -107,30 +116,34 @@ const timelineData: TimelineItem[] = [
     kegiatan: "Pemasangan PRH di Kawasan Simpang Lima Semarang",
     deskripsi:
       "Instalasi PRH di kawasan strategis kota untuk menambah daya resap air dan mengurangi limpasan permukaan di area publik.",
-    lokasi: "Kelurahan Mugasari Semarang",
+    lokasi: "Mugasari Kota Semarang",
     jumlahPRH: 52,
-    sumberDana: "Program Matching Fund 2023 dengan mitra DPU",
-    image: images[3],
+    sumberDana: "Program Matching Fund dengan mitra DPU Kota Semarang",
+    tanggal: "2023",
+    image: images[7],
   },
   {
     id: 9,
     kegiatan: "Pemasangan PRH di daerah Aliran Sungai Bringin Semarang",
     deskripsi:
       "Proyek PRH untuk memperkuat konservasi di daerah aliran sungai guna menekan erosi dan banjir bandang.",
-    lokasi: "Kecamatan Ngaliyan Semarang",
+    lokasi: "DAS Sungai Bringin Kota Semarang",
     jumlahPRH: 12,
-    sumberDana: "Program Penelitian USM 2023",
-    image: images[7],
+    sumberDana: "Program Penelitian USM",
+    tanggal: "2023",
+    image: images[8],
   },
   {
     id: 10,
-    kegiatan: "Pemasangan PRH di Kelurahan Jabungan",
+    kegiatan:
+      "PKM Mengatasi Kekurangan Air dengan Pipa Resapan Horizontal dan Peningkatan Kompetensi Manajemen Bisnis Budidaya Ikan Dalam Ember (BUDIKDAMBER) Masyarakat di Jabungan Semarang",
     deskripsi:
-      "Lanjutan pemasangan PRH untuk memperluas area resapan di kawasan rawan kekeringan dan peningkatan cadangan air tanah.",
-    lokasi: "Kelurahan Jabungan",
+      "Proyek pengabdian masyarakat yang menggabungkan teknologi PRH dan inovasi sosial untuk memperkuat ketahanan air dan ekonomi lokal.",
+    lokasi: "Kelurahan Jabungan Kecamatan Banyumanik Kota Semarang",
     jumlahPRH: 22,
-    sumberDana: "Program PKM DRTPM 2024",
-    image: images[8],
+    sumberDana: "Program PKM DRTPM",
+    tanggal: "2024",
+    image: images[9],
   },
   {
     id: 11,
@@ -141,9 +154,11 @@ const timelineData: TimelineItem[] = [
     lokasi: "Universitas Semarang",
     jumlahPRH: 57,
     sumberDana: "Universitas Semarang",
-    image: images[2],
+    tanggal: "2025",
+    image: images[10],
   },
 ];
+
 
 const ProyekBelakang: React.FC = () => {
   const navigate = useNavigate();
@@ -151,34 +166,29 @@ const ProyekBelakang: React.FC = () => {
   return (
     <>
       <Navbar />
-      <section className="bg-white py-20 px-6 pt-24">
+      <section className="bg-[#0F5E99] py-20 px-6 pt-24">
         <div className="max-w-7xl mx-auto mb-12">
-          {/* Tombol Kembali */}
           <button
             onClick={() => navigate(-1)}
-            className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors mb-8 font-medium"
+            className="flex items-center gap-2 text-yellow-400 hover:text-yellow-600 transition-colors mb-8 font-medium"
           >
             <ArrowLeft className="w-5 h-5" />
             Kembali
           </button>
 
-          {/* Judul */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl font-bold text-gray-900">
-              Timeline Implementasi PRH
+            <h1 className="text-4xl font-bold text-yellow-400">
+              Timeline Implementasi Pemasangan PRH
             </h1>
-            <p className="text-gray-600 mt-4">
-              Ringkasan kegiatan pembangunan dan pemasangan PRH dari awal hingga akhir
+            <p className="text-white text-xl mt-4">
+              Ringkasan kegiatan pembangunan dan pemasangan PRH
             </p>
           </div>
         </div>
 
-        {/* Timeline */}
         <div className="relative max-w-6xl mx-auto">
-          {/* Garis Tengah Timeline */}
-          <div className="hidden md:block absolute left-1/2 top-0 w-1 bg-gray-300 h-full transform -translate-x-1/2"></div>
+          <div className="hidden md:block absolute left-1/2 top-0 w-1 bg-yellow-400 h-full transform -translate-x-1/2"></div>
 
-          {/* Timeline Items */}
           <div className="space-y-20">
             {timelineData.map((item, index) => (
               <motion.div
@@ -190,7 +200,6 @@ const ProyekBelakang: React.FC = () => {
                   index % 2 === 0 ? "" : "md:flex-row-reverse"
                 }`}
               >
-                {/* Gambar */}
                 <div className="md:w-5/12">
                   <img
                     src={item.image}
@@ -199,19 +208,18 @@ const ProyekBelakang: React.FC = () => {
                   />
                 </div>
 
-                {/* Titik di garis tengah */}
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 bg-blue-600 text-white font-bold rounded-full items-center justify-center shadow-md z-10">
                   {item.id}
                 </div>
 
-                                {/* Konten */}
                 <div className="bg-gray-50 rounded-2xl p-6 md:w-5/12 shadow-lg mt-8 md:mt-0">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">
                     {item.kegiatan}
                   </h3>
-                  <p className="text-gray-600 mb-4">
-                    {item.deskripsi}
+                  <p className="text-sm text-blue-600 mb-3">
+                    {item.tanggal}
                   </p>
+                  <p className="text-gray-600 mb-4">{item.deskripsi}</p>
                   <p className="text-gray-600 mb-1">
                     <strong>Lokasi:</strong> {item.lokasi}
                   </p>
@@ -222,7 +230,6 @@ const ProyekBelakang: React.FC = () => {
                     <strong>Sumber Dana:</strong> {item.sumberDana}
                   </p>
                 </div>
-
               </motion.div>
             ))}
           </div>

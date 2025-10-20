@@ -90,13 +90,13 @@ export const Testimoni = () => {
   return (
     <section
       id="testimoni"
-      className="pt-16 pb-32 bg-gray-50 relative overflow-hidden"
+      className="pt-16 pb-32 bg-[#0F5E99] relative overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-6 relative">
-        <h2 className="text-4xl font-bold text-gray-900 text-center mb-4">
+        <h2 className="text-4xl font-bold text-yellow-400 text-center mb-4">
           Testimoni
         </h2>
-        <p className="text-gray-600 text-lg text-center mb-12">
+        <p className="text-white text-xl text-center mb-12">
           Pendapat mereka tentang PRH (Pipa Resapan Horisontal) untuk konservasi
           air dan penanggulangan banjir
         </p>
