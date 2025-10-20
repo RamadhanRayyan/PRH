@@ -45,7 +45,15 @@ export const Navbar = () => {
               onClick={() => navigate("/")}
               className="flex items-center space-x-3"
             >
-              <img src={logo} className="h-10 w-10" alt="Logo" />
+              <img
+                src={logo}
+                className="h-10 w-10 cursor-pointer"
+                alt="Logo"
+                onClick={() => {
+                  const section = document.getElementById("beranda");
+                  section?.scrollIntoView({ behavior: "smooth" });
+                }}
+              />
               <div className="text-start">
                 <h1 className="text-xl font-bold text-gray-800">
                   CV. Rekayasa Nusa Mandiri

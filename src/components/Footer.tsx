@@ -45,7 +45,9 @@ export const Footer = () => {
           <div className="flex flex-col items-start text-left">
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-14 h-14 bg-gray-50 rounded-lg flex items-center justify-center">
-                <img src="/logo.png" alt="logo" className="h-12 w-12 object-contain" />
+                <a href="#beranda">
+                  <img src="/logo.png" alt="logo" className="h-12 w-12 object-contain cursor-pointer" />
+                </a>
               </div>
               <div>
                 <h3 className="text-lg font-bold">CV. Rekayasa Nusa Mandiri</h3>
