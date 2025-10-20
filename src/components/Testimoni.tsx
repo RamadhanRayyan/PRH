@@ -12,7 +12,7 @@ const testimonials = [
   },
   {
   name: "Muhammad Ramadhan Rayyan",
-  title: "Programming - NUSA Boarding School",
+  title: "Programmer - NUSA Boarding School",
   message: "Sebagai siswa IT, saya kagum bagaimana PRH menggabungkan teknologi sederhana dengan dampak besar. Inovasi ini bukti bahwa solusi besar bisa lahir dari ide yang sederhana tapi tulus.",
   color: "bg-blue-500",
   initial: "M",
