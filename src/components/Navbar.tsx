@@ -40,8 +40,7 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-3">
-            <button
-              onClick={() => navigate("/")}
+            <a href="#"
               className="flex items-center space-x-3"
             >
               <div className="text-start">
@@ -49,7 +48,7 @@ export const Navbar = () => {
                   Pipa Resapan Horisontal
                 </h1>
               </div>
-            </button>
+            </a>
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
