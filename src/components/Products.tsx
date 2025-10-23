@@ -94,7 +94,7 @@ export const Products = () => {
                     <img
                       src={product.image}
                       alt={product.type}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover select-none pointer-events-none"
                     />
                     <div className="absolute bottom-3 left-0 right-0 flex justify-center pb-6"></div>
                   </div>

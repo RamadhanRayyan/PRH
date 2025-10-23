@@ -83,7 +83,7 @@ const ImplementasiProses: React.FC = () => {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="rounded-2xl shadow-lg w-full object-cover"
+                    className="rounded-2xl shadow-lg w-full object-cover select-none pointer-events-none"
                   />
                 </div>
 

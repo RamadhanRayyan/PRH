@@ -11,8 +11,8 @@ import img3 from "../assets/G.8 AA.jpeg";
 import img4 from "../assets/Bringin.1 AA.jpeg";
 import img5 from "../assets/13. Kel. SDGM AA.jpeg";
 import img6 from "../assets/01. J1 Drptm B.jpeg";
-import img7 from "../assets/Screenshot 2025-10-20 112152.png";
-import img8 from "../assets/SIMPANG.png"
+import img7 from "../assets/gambar_HD2.png";
+import img8 from "../assets/gambar_HD.png"
 import img9 from "../assets/Bringin.4 AA.jpeg";
 import img10 from "../assets/J.16A.jpeg";
 import img11 from "../assets/567.jpeg"
@@ -204,7 +204,7 @@ const ProyekBelakang: React.FC = () => {
                   <img
                     src={item.image}
                     alt={item.kegiatan}
-                    className="rounded-2xl shadow-lg w-full object-cover"
+                    className="rounded-2xl shadow-lg w-full object-cover select-none pointer-events-none"
                   />
                 </div>
 
