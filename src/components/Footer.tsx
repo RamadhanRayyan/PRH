@@ -46,7 +46,7 @@ export const Footer = () => {
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-14 h-14 bg-gray-50 rounded-lg flex items-center justify-center">
                 <a href="#beranda">
-                  <img src="/logo.png" alt="logo" className="h-12 w-12 object-contain cursor-pointer" />
+                  <img src="/logo.png" alt="logo" className="h-12 w-12 object-contain cursor-pointer select-none pointer-events-none" />
                 </a>
               </div>
               <div>

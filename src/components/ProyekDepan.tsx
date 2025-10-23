@@ -108,7 +108,7 @@ export default function ImplementasiSummary() {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-cover select-none pointer-events-none"
               />
               <div className="p-6 text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
