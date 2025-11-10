@@ -1,5 +1,6 @@
 import hero from "../assets/hero.png";
 import { BookOpen, Phone } from "lucide-react";
+import Booklet from "../assets/CV. REKAYASA NUSA MANDIRI.pdf"
 
 export const Hero = () => {
   return (
@@ -33,7 +34,7 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 justify-center">
             {/* Tombol Booklet */}
             <a
-              href="/Booklet.pdf" // ganti path sesuai lokasi file kamu
+              href={Booklet}
               download
               className="flex items-center justify-center px-6 py-3 bg-[#0F5E99] text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition duration-300"
             >
