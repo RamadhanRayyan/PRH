@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "../components/Navbar";
 
-import img1 from "../assets/gambar prh 1.0.jpg";
+import video1 from "../assets/vidio.mp4";
 import img2 from "../assets/gambar prh 2.0.png";
 import img3 from "../assets/gambar prh 3.0.png";
 import img4 from "../assets/gambar prh 4.0.png";
@@ -21,7 +21,7 @@ const timelineData: TimelineItem[] = [
     id: 1,
     title: "Proses Pembuatan PRH",
     desc: "Tahap awal pembuatan Pipa Resapan Horisontal dengan material berkualitas.",
-    image: img1,
+    image: video1,
   },
   {
     id: 2,
@@ -44,7 +44,6 @@ const timelineData: TimelineItem[] = [
 ];
 
 const ImplementasiProses: React.FC = () => {
-
   return (
     <>
       <Navbar />
@@ -78,13 +77,24 @@ const ImplementasiProses: React.FC = () => {
                   index % 2 === 0 ? "" : "md:flex-row-reverse"
                 }`}
               >
-                {/* Gambar */}
+                {/* Media: gambar atau video */}
                 <div className="md:w-5/12">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="rounded-2xl shadow-lg w-full object-cover select-none pointer-events-none"
-                  />
+                  {item.image.endsWith(".mp4") ? (
+                    <video
+                      src={item.image}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="rounded-2xl shadow-lg w-full object-cover"
+                    />
+                  ) : (
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="rounded-2xl shadow-lg w-full object-cover select-none pointer-events-none"
+                    />
+                  )}
                 </div>
 
                 {/* Titik di garis tengah */}
